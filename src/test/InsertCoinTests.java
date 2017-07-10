@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import vendingmachinekata.Coin;
+import vendingmachinekata.Controller;
 import vendingmachinekata.Display;
 import vendingmachinekata.MoneyHandler;
 import vendingmachinekata.VendingMachine;
@@ -42,5 +43,13 @@ public class InsertCoinTests {
 		mh.insertCoin(Coin.DIME);
 		assertEquals(money+10, mh.getMoneyThatCanBeUsedToBuy());
 		}
+	
+	@Test
+	public void whenADimeIsInsertedTheDisplaySays10(){
+		Display display = new Display();
+		display.insertCoin(Coin.DIME);
+		assertEquals("10",display.getDisplay());
+		
+	}
 	
 }
