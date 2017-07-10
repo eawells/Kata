@@ -35,4 +35,12 @@ public class InsertCoinTests {
 		assertEquals(coinReturn+1, mh.getCoinReturnValue());
 	}
 	
+	@Test
+	public void whenADimeIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy10(){
+		MoneyHandler mh = new MoneyHandler();
+		int money = mh.getMoneyThatCanBeUsedToBuy();
+		mh.insertCoin(Coin.DIME);
+		assertEquals(money+10, mh.getMoneyThatCanBeUsedToBuy());
+		}
+	
 }
