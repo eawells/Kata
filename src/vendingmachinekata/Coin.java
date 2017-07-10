@@ -22,10 +22,5 @@ public enum Coin {
 	protected double diameter(){
 		return diameter;
 	}
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//		System.out.println(Coin.PENNY.mass());
-//
-//	}
 
 }

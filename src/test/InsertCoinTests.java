@@ -6,37 +6,33 @@ import org.junit.Before;
 import org.junit.Test;
 
 import vendingmachinekata.Coin;
+import vendingmachinekata.Display;
+import vendingmachinekata.MoneyHandler;
 import vendingmachinekata.VendingMachine;
 
 public class InsertCoinTests {
 	
-	VendingMachine vendingMachine;
-	
-//	@Before
-//	public void setUp(){
-//		VendingMachine vendingMachine = new VendingMachine();
-//	}
-	
 	@Test
 	public void whenNoCoinIsInsertedDisplaySaysINSERTCOIN(){
-		VendingMachine vendingMachine = new VendingMachine();
-		assertEquals("INSERT COIN", vendingMachine.getDisplay());
+		Display display = new Display();
+		assertEquals("INSERT COIN", display.getDisplay());
 	}
 	
 	@Test
 	public void whenAPennyIsInsertedDisplayDoesNotChange(){
-		VendingMachine vendingMachine = new VendingMachine();
-		String display = vendingMachine.getDisplay();
-		vendingMachine.insertCoin(Coin.PENNY);
-		assertEquals(display, vendingMachine.getDisplay());
+		Display display = new Display();
+		MoneyHandler mh = new MoneyHandler();
+		String displ = display.getDisplay();
+		mh.insertCoin(Coin.PENNY);
+		assertEquals(displ, display.getDisplay());
 	}
 	
 	@Test
 	public void whenAPennyIsInsertedCoinReturnValueIsPlus1(){
-		VendingMachine vendingMachine = new VendingMachine();
-		int coinReturn = vendingMachine.getCoinReturnValue();
-		vendingMachine.insertCoin(Coin.PENNY);
-		assertEquals(coinReturn+1, vendingMachine.getCoinReturnValue());
+		MoneyHandler mh = new MoneyHandler();
+		int coinReturn = mh.getCoinReturnValue();
+		mh.insertCoin(Coin.PENNY);
+		assertEquals(coinReturn+1, mh.getCoinReturnValue());
 	}
 	
 }
