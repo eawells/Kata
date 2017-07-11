@@ -1,0 +1,33 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import vendingmachinekata.Coin;
+import vendingmachinekata.Controller;
+
+public class ControllerTests {
+	
+	private Controller control;
+	
+	@Before
+	public void setUp(){
+		control = new Controller();
+	}
+	
+	@Test
+	public void whenADimeIsInsertedTheDisplaySays10(){
+		control.insertCoin(Coin.DIME);
+		assertEquals("10",control.getDisplay());
+	}
+	
+	@Test
+	public void whenTwoDimesAreInsertedTheDisplaySays20(){
+		control.insertCoin(Coin.DIME);
+		control.insertCoin(Coin.DIME);
+		assertEquals("20",control.getDisplay());
+	}
+
+}

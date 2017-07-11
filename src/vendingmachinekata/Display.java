@@ -13,11 +13,9 @@ public class Display {
 		return display;
 	}
 
-	public void insertCoin(Coin coin) {
-		if(coin.mass() == Coin.DIME.mass() && coin.diameter() == Coin.DIME.diameter()){
-			display = "10";
-		}
-		
+	public void changeDisplayto(String s){
+		display = s;
 	}
+	
 
 }
