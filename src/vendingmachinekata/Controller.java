@@ -12,9 +12,8 @@ public class Controller {
 	
 	public void insertCoin(Coin coin) {
 		moneyHandler.insertCoin(coin);
-		if(coin.mass() == Coin.DIME.mass() && coin.diameter() == Coin.DIME.diameter()){
+		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
 			if(isDigit(display.getDisplay())){
-			
 				int money = Integer.parseInt(display.getDisplay()) + 10;
 				display.changeDisplayto(Integer.toString(money));
 			}
@@ -22,7 +21,11 @@ public class Controller {
 				display.changeDisplayto("10");
 
 			}
-		}		
+		}	
+		else{
+			display.changeDisplayto("5");
+		}
+		
 	}
 	
 	public String getDisplay() {

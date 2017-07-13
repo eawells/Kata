@@ -11,10 +11,10 @@ public class MoneyHandler {
 	}
 	
 	public void insertCoin(Coin coin) {
-		if(coin.mass() == Coin.PENNY.mass() && coin.diameter() == Coin.PENNY.diameter()){
+		if(coin.mass() == VendingMachineLiterals.PENNY_MASS && coin.diameter() == VendingMachineLiterals.PENNY_DIAMETER){
 			coinReturnValue += VendingMachineLiterals.PENNY_VALUE;
 		}
-		if(coin.mass() == Coin.DIME.mass() && coin.diameter() == Coin.DIME.diameter()){
+		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
 			moneyThatCanBeUsedToBuy += VendingMachineLiterals.DIME_VALUE;
 		}
 	}

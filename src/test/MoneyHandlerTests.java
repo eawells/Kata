@@ -29,5 +29,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		assertEquals(money+10, mh.getMoneyThatCanBeUsedToBuy());
 		}
+	
+	
 		
 }

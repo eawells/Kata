@@ -29,5 +29,12 @@ public class ControllerTests {
 		control.insertCoin(Coin.DIME);
 		assertEquals("20",control.getDisplay());
 	}
+	
+	@Test 
+	public void whenANickelIsInsertedTheDisplaySays5(){
+		control.insertCoin(Coin.NICKEL);
+		assertEquals("5",control.getDisplay());
+	}
+	
 
 }
