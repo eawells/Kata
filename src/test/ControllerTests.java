@@ -7,17 +7,14 @@ import org.junit.Test;
 
 import vendingmachinekata.Coin;
 import vendingmachinekata.Controller;
-import vendingmachinekata.MoneyHandler;
 
 public class ControllerTests {
 	
 	private Controller control;
-	private MoneyHandler moneyHandler;
 	
 	@Before
 	public void setUp(){
 		control = new Controller();
-		moneyHandler = new MoneyHandler();
 	}
 	
 	@Test
@@ -66,6 +63,15 @@ public class ControllerTests {
 		control.insertCoin(Coin.PENNY);
 		control.insertCoin(Coin.QUARTER);
 		assertEquals("40",control.getDisplay());
+	}
+	
+	@Test
+	public void whenANickelADimeAPennyAndAQuarterAreInsertedTheMoneyAvailableIs40(){
+		control.insertCoin(Coin.NICKEL);
+		control.insertCoin(Coin.DIME);
+		control.insertCoin(Coin.PENNY);
+		control.insertCoin(Coin.QUARTER);
+		assertEquals(40,control.getMoneyAvailable());
 	}
 	
 	

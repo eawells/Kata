@@ -3,11 +3,11 @@ package vendingmachinekata;
 public class MoneyHandler {
 	
 	private int coinReturnValue;
-	private int moneyThatCanBeUsedToBuy;
+	private int moneyAvailable;
 	
 	public MoneyHandler(){
 		coinReturnValue = 0;
-		moneyThatCanBeUsedToBuy = 0;
+		moneyAvailable = 0;
 	}
 	
 	public void insertCoin(Coin coin) {
@@ -15,13 +15,13 @@ public class MoneyHandler {
 			coinReturnValue += VendingMachineLiterals.PENNY_VALUE;
 		}
 		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
-			moneyThatCanBeUsedToBuy += VendingMachineLiterals.DIME_VALUE;
+			moneyAvailable += VendingMachineLiterals.DIME_VALUE;
 		}
 		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
-			moneyThatCanBeUsedToBuy += VendingMachineLiterals.NICKEL_VALUE;
+			moneyAvailable += VendingMachineLiterals.NICKEL_VALUE;
 		}
 		if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
-			moneyThatCanBeUsedToBuy += VendingMachineLiterals.QUARTER_VALUE;
+			moneyAvailable += VendingMachineLiterals.QUARTER_VALUE;
 		}
 		
 	}
@@ -30,8 +30,8 @@ public class MoneyHandler {
 		return coinReturnValue;
 	}
 	
-	public int getMoneyThatCanBeUsedToBuy(){
-		return moneyThatCanBeUsedToBuy;
+	public int getMoneyAvailable(){
+		return moneyAvailable;
 	}
 
 }

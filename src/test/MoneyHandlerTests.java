@@ -25,23 +25,23 @@ public class MoneyHandlerTests {
 	
 	@Test
 	public void whenADimeIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy10(){
-		int money = mh.getMoneyThatCanBeUsedToBuy();
+		int money = mh.getMoneyAvailable();
 		mh.insertCoin(Coin.DIME);
-		assertEquals(money+10, mh.getMoneyThatCanBeUsedToBuy());
+		assertEquals(money+10, mh.getMoneyAvailable());
 		}
 	
 	@Test
 	public void whenANickelIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy5(){
-		int money = mh.getMoneyThatCanBeUsedToBuy();
+		int money = mh.getMoneyAvailable();
 		mh.insertCoin(Coin.NICKEL);
-		assertEquals(money+5, mh.getMoneyThatCanBeUsedToBuy());
+		assertEquals(money+5, mh.getMoneyAvailable());
 		}
 	
 	@Test
 	public void whenAQuarterIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy25(){
-		int money = mh.getMoneyThatCanBeUsedToBuy();
+		int money = mh.getMoneyAvailable();
 		mh.insertCoin(Coin.QUARTER);
-		assertEquals(money+25, mh.getMoneyThatCanBeUsedToBuy());
+		assertEquals(money+25, mh.getMoneyAvailable());
 		}
 
 

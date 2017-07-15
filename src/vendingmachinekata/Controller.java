@@ -25,6 +25,14 @@ public class Controller {
 		
 	}
 	
+	public String getDisplay() {
+		return display.getDisplay();
+	}
+	
+	public int getMoneyAvailable() {
+		return	moneyHandler.getMoneyAvailable();
+	}
+	
 	private void addMoneytoDisplay(int amount){
 		if(isDigit(display.getDisplay())){
 			int money = Integer.parseInt(display.getDisplay()) + amount;
@@ -36,10 +44,6 @@ public class Controller {
 		}
 	}
 	
-	public String getDisplay() {
-		return display.getDisplay();
-	}
-	
 	private boolean isDigit(String s){
 		try{
 			Integer.parseInt(s);
@@ -49,7 +53,5 @@ public class Controller {
 			return false;
 		}
 	}
-
-
 	
 }
