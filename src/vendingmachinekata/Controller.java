@@ -21,8 +21,7 @@ public class Controller {
 		else if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
 			addMoneytoDisplay(25);
 		}
-		
-		
+			
 	}
 	
 	public String getDisplay() {
@@ -31,6 +30,10 @@ public class Controller {
 	
 	public int getMoneyAvailable() {
 		return	moneyHandler.getMoneyAvailable();
+	}
+	
+	public void selectItem(String string) {
+		display.changeDisplayto("THANK YOU");
 	}
 	
 	private void addMoneytoDisplay(int amount){
@@ -53,5 +56,7 @@ public class Controller {
 			return false;
 		}
 	}
+
+	
 	
 }

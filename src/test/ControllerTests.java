@@ -74,5 +74,14 @@ public class ControllerTests {
 		assertEquals(40,control.getMoneyAvailable());
 	}
 	
+	@Test
+	public void whenAColaIsPurchasedWithADollarDisplaySaysTHANKYOU(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem("A1");
+		assertEquals("THANK YOU",control.getDisplay());
+	}
 	
 }
