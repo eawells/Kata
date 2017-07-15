@@ -43,5 +43,8 @@ public class ControllerTests {
 		assertEquals("10",control.getDisplay());
 	}
 	
+//	@Test
+//	public void whenTwo
+	
 
 }

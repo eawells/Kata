@@ -17,6 +17,10 @@ public class MoneyHandler {
 		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
 			moneyThatCanBeUsedToBuy += VendingMachineLiterals.DIME_VALUE;
 		}
+		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
+			moneyThatCanBeUsedToBuy += VendingMachineLiterals.NICKEL_VALUE;
+		}
+		
 	}
 	
 	public int getCoinReturnValue() {

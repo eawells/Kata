@@ -30,6 +30,14 @@ public class MoneyHandlerTests {
 		assertEquals(money+10, mh.getMoneyThatCanBeUsedToBuy());
 		}
 	
+	@Test
+	public void whenANickelIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy5(){
+		int money = mh.getMoneyThatCanBeUsedToBuy();
+		mh.insertCoin(Coin.NICKEL);
+		assertEquals(money+5, mh.getMoneyThatCanBeUsedToBuy());
+		}
+
+
 	
 		
 }
