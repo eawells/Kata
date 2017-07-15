@@ -20,6 +20,9 @@ public class MoneyHandler {
 		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
 			moneyThatCanBeUsedToBuy += VendingMachineLiterals.NICKEL_VALUE;
 		}
+		if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
+			moneyThatCanBeUsedToBuy += VendingMachineLiterals.QUARTER_VALUE;
+		}
 		
 	}
 	

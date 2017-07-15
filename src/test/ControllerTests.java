@@ -7,14 +7,17 @@ import org.junit.Test;
 
 import vendingmachinekata.Coin;
 import vendingmachinekata.Controller;
+import vendingmachinekata.MoneyHandler;
 
 public class ControllerTests {
 	
 	private Controller control;
+	private MoneyHandler moneyHandler;
 	
 	@Before
 	public void setUp(){
 		control = new Controller();
+		moneyHandler = new MoneyHandler();
 	}
 	
 	@Test
@@ -55,5 +58,6 @@ public class ControllerTests {
 		control.insertCoin(Coin.NICKEL);
 		assertEquals("10",control.getDisplay());
 	}
-
+	
+	
 }
