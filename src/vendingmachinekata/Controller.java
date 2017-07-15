@@ -13,19 +13,23 @@ public class Controller {
 	public void insertCoin(Coin coin) {
 		moneyHandler.insertCoin(coin);
 		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
-			if(isDigit(display.getDisplay())){
-				int money = Integer.parseInt(display.getDisplay()) + 10;
-				display.changeDisplayto(Integer.toString(money));
-			}
-			else{
-				display.changeDisplayto("10");
-
-			}
+			addMoneytoDisplay(10);
 		}	
-		else{
-			display.changeDisplayto("5");
+		else if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
+			addMoneytoDisplay(5);
 		}
 		
+	}
+	
+	private void addMoneytoDisplay(int amount){
+		if(isDigit(display.getDisplay())){
+			int money = Integer.parseInt(display.getDisplay()) + amount;
+			display.changeDisplayto(Integer.toString(money));
+		}
+		else{
+			display.changeDisplayto(amount+"");
+
+		}
 	}
 	
 	public String getDisplay() {

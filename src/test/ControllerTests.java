@@ -36,5 +36,12 @@ public class ControllerTests {
 		assertEquals("5",control.getDisplay());
 	}
 	
+	@Test 
+	public void whenTwoNickelsAreInsertedTheDisplaySays10(){
+		control.insertCoin(Coin.NICKEL);
+		control.insertCoin(Coin.NICKEL);
+		assertEquals("10",control.getDisplay());
+	}
+	
 
 }
