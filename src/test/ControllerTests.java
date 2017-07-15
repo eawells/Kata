@@ -59,5 +59,14 @@ public class ControllerTests {
 		assertEquals("10",control.getDisplay());
 	}
 	
+	@Test
+	public void whenANickelADimeAPennyAndAQuarterAreInsertedTheDisplaySays40(){
+		control.insertCoin(Coin.NICKEL);
+		control.insertCoin(Coin.DIME);
+		control.insertCoin(Coin.PENNY);
+		control.insertCoin(Coin.QUARTER);
+		assertEquals("40",control.getDisplay());
+	}
+	
 	
 }
