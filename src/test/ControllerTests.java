@@ -43,8 +43,17 @@ public class ControllerTests {
 		assertEquals("10",control.getDisplay());
 	}
 	
-//	@Test
-//	public void whenTwo
+	@Test 
+	public void whenAQuarterIsInsertedTheDisplaySays25(){
+		control.insertCoin(Coin.QUARTER);
+		assertEquals("25",control.getDisplay());
+	}
 	
+	@Test 
+	public void whenTwoQuartersAreInsertedTheDisplaySays50(){
+		control.insertCoin(Coin.NICKEL);
+		control.insertCoin(Coin.NICKEL);
+		assertEquals("10",control.getDisplay());
+	}
 
 }

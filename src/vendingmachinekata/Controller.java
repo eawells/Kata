@@ -18,6 +18,10 @@ public class Controller {
 		else if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
 			addMoneytoDisplay(5);
 		}
+		else if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
+			addMoneytoDisplay(25);
+		}
+		
 		
 	}
 	
