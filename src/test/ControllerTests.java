@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import vendingmachinekata.Coin;
 import vendingmachinekata.Controller;
+import vendingmachinekata.VendingMachineLiterals;
 
 public class ControllerTests {
 	
@@ -80,8 +81,17 @@ public class ControllerTests {
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
-		control.selectItem("A1");
+		control.selectItem(VendingMachineLiterals.COLA_CODE);
 		assertEquals("THANK YOU",control.getDisplay());
+	}
+	
+	@Test
+	public void whenAColaIsSelectedWithoutEnoughMoneyDisplayGivesPrice(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		assertEquals("PRICE: " +VendingMachineLiterals.COLA_COST,control.getDisplay());
 	}
 	
 }

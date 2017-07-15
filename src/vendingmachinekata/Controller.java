@@ -32,9 +32,19 @@ public class Controller {
 		return	moneyHandler.getMoneyAvailable();
 	}
 	
-	public void selectItem(String string) {
-		display.changeDisplayto("THANK YOU");
+	public void selectItem(String item) {
+		if(item.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
+			if(getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
+			display.changeDisplayto("THANK YOU");
+			}
+			else{
+				display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
+			}
+		}
+		
 	}
+	
+	
 	
 	private void addMoneytoDisplay(int amount){
 		if(isDigit(display.getDisplay())){
@@ -56,6 +66,7 @@ public class Controller {
 			return false;
 		}
 	}
+
 
 	
 	

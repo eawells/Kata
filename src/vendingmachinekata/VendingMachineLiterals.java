@@ -23,8 +23,12 @@ public class VendingMachineLiterals {
 	public static final double QUARTER_DIAMETER = 24.26;
 	
 	//Product Literals: cost in cents
-	public static final double COLA_COST = 100;
-	public static final double CHIPS_COST = 50;
-	public static final double CANDY_COST = 65;
+	public static final int COLA_COST = 100;
+	public static final int CHIPS_COST = 50;
+	public static final int CANDY_COST = 65;
+	
+	public static final String COLA_CODE = "A1";
+	public static final String CHIPS_CODE = "A2";
+	public static final String CANDY_CODE = "A3";
 
 }
