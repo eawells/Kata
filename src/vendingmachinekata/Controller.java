@@ -75,6 +75,7 @@ public class Controller {
 				normalDisplay = false;
 			}
 		}
+		moneyHandler.selectItem(itemCode);
 		
 	}	
 }

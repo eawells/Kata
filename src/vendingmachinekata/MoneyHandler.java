@@ -35,7 +35,10 @@ public class MoneyHandler {
 	}
 
 	public void selectItem(String itemCode) {
-		moneyAvailable = 0;
+		if(itemCode.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE) && getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
+			moneyAvailable = 0;
+		
+		}
 	}
 
 }

@@ -54,4 +54,5 @@ public class MoneyHandlerTests {
 		mh.selectItem(VendingMachineLiterals.COLA_CODE);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
+	
 }
