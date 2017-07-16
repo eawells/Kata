@@ -34,4 +34,8 @@ public class MoneyHandler {
 		return moneyAvailable;
 	}
 
+	public void selectItem(String itemCode) {
+		moneyAvailable = 0;
+	}
+
 }
