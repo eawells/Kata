@@ -4,10 +4,12 @@ public class Controller {
 	
 	private MoneyHandler moneyHandler;
 	private Display display;
+	private boolean normalDisplay;
 	
 	public Controller(){
 		moneyHandler = new MoneyHandler();
 		display = new Display();
+		normalDisplay = true;
 	}
 	
 	public void insertCoin(Coin coin) {
@@ -23,28 +25,6 @@ public class Controller {
 		}
 			
 	}
-	
-	public String getDisplay() {
-		return display.getDisplay();
-	}
-	
-	public int getMoneyAvailable() {
-		return	moneyHandler.getMoneyAvailable();
-	}
-	
-	public void selectItem(String item) {
-		if(item.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
-			if(getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
-			display.changeDisplayto("THANK YOU");
-			}
-			else{
-				display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
-			}
-		}
-		
-	}
-	
-	
 	
 	private void addMoneytoDisplay(int amount){
 		if(isDigit(display.getDisplay())){
@@ -67,7 +47,34 @@ public class Controller {
 		}
 	}
 
-
+	public String getDisplay() {
+		if(!normalDisplay){
+			normalDisplay = true;
+			return display.getDisplay();
+		}
+		if(getMoneyAvailable() > 0){
+			return getMoneyAvailable()+"";
+		}
+		return "INSERT COIN";
+		
+		 	
+	}
 	
+	public int getMoneyAvailable() {
+		return	moneyHandler.getMoneyAvailable();
+	}
 	
+	public void selectItem(String item) {
+		if(item.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
+			if(getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
+				display.changeDisplayto("THANK YOU");
+				normalDisplay = false;
+			}
+			else{
+				display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
+				normalDisplay = false;
+			}
+		}
+		
+	}	
 }

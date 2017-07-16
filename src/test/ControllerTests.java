@@ -94,4 +94,16 @@ public class ControllerTests {
 		assertEquals("PRICE: " +VendingMachineLiterals.COLA_COST,control.getDisplay());
 	}
 	
+	@Test
+	public void whenAColaIsSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.getDisplay();
+		assertEquals("75",control.getDisplay());
+	}
+	
+	
+	
 }
