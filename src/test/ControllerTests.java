@@ -104,6 +104,11 @@ public class ControllerTests {
 		assertEquals("75",control.getDisplay());
 	}
 	
-	
+	@Test
+	public void whenAColaIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.getDisplay();
+		assertEquals("INSERT COIN",control.getDisplay());
+	}
 	
 }
