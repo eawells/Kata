@@ -66,5 +66,15 @@ public class MoneyHandlerTests {
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
+	@Test
+	public void whenChipsArePurchasedTheMoneyAvailableIs0(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.selectItem(Product.CANDY);
+		assertEquals(0,mh.getMoneyAvailable());
+	}	
+	
 	
 }

@@ -111,7 +111,7 @@ public class ControllerTests {
 		control.getDisplay();
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
-	
+		
 	@Test
 	public void whenACandyIsPurchasedWithADollarDisplaySaysTHANKYOU(){
 		control.insertCoin(Coin.QUARTER);
@@ -141,6 +141,38 @@ public class ControllerTests {
 	@Test
 	public void whenACandyIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
 		control.selectItem(Product.CANDY);
+		control.getDisplay();
+		assertEquals("INSERT COIN",control.getDisplay());
+	}
+	
+	@Test
+	public void whenChipsArePurchasedWithADollarDisplaySaysTHANKYOU(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER); 
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(Product.CHIPS);
+		assertEquals("THANK YOU",control.getDisplay());
+	}
+		
+	@Test 
+	public void whenChipsAreSelectedWithoutEnoughMoneyDisplayGivesPrice(){ 
+		control.insertCoin(Coin.QUARTER); 
+		control.selectItem(Product.CHIPS); 
+		assertEquals("PRICE: " +VendingMachineLiterals.CHIPS_COST,control.getDisplay()); 
+	} 
+	
+	@Test
+	public void whenChipsAreSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable(){
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(Product.CHIPS);
+		control.getDisplay();
+		assertEquals("25",control.getDisplay());
+	}
+	
+	@Test
+	public void whenChipsAreSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+		control.selectItem(Product.CHIPS);
 		control.getDisplay();
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
