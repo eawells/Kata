@@ -70,7 +70,7 @@ public class Controller {
 			normalDisplay = false;
 		}
 		else{
-			display.changeDisplayto("PRICE: " + item.cost());
+			display.changeDisplayto("PRICE: " + item.cost() );
 			normalDisplay = false;
 		}
 		

@@ -115,18 +115,19 @@ public class ControllerTests {
 	@Test
 	public void whenACandyIsPurchasedWithADollarDisplaySaysTHANKYOU(){
 		control.insertCoin(Coin.QUARTER);
-		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER); 
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.selectItem(Product.CANDY);
 		assertEquals("THANK YOU",control.getDisplay());
 	}
 		
-	@Test
-	public void whenACandyIsSelectedWithoutEnoughMoneyDisplayGivesPrice(){
-		control.insertCoin(Coin.QUARTER);
-		control.selectItem(Product.CANDY);
-		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST,control.getDisplay());
-	}
+	@Test 
+	public void whenCandyIsSelectedWithoutEnoughMoneyDisplayGivesPrice(){ 
+		control.insertCoin(Coin.QUARTER); 
+		control.selectItem(Product.CANDY); 
+		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST,control.getDisplay()); 
+	} 
+	
 	
 }
