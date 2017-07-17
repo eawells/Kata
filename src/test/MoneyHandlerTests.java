@@ -72,7 +72,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CANDY);
+		mh.selectItem(Product.CHIPS);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
