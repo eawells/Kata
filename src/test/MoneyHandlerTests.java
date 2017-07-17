@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import vendingmachinekata.Coin;
 import vendingmachinekata.MoneyHandler;
+import vendingmachinekata.Product;
 import vendingmachinekata.VendingMachineLiterals;
 
 public class MoneyHandlerTests {
@@ -51,8 +52,17 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(VendingMachineLiterals.COLA_CODE);
+		mh.selectItem(Product.COLA);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
+	@Test
+	public void whenCandyIsPurchasedTheMoneyAvailableIs0(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.selectItem(Product.CANDY);
+		assertEquals(0,mh.getMoneyAvailable());
+	}	
 }

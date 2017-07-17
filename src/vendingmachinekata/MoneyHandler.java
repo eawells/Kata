@@ -34,11 +34,11 @@ public class MoneyHandler {
 		return moneyAvailable;
 	}
 
-	public void selectItem(String itemCode) {
-		if(itemCode.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE) && getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
+	public void selectItem(Product item) {
+		if(getMoneyAvailable() >= item.cost()){
 			moneyAvailable = 0;
-		
 		}
 	}
+	
 
 }

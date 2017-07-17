@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import vendingmachinekata.Coin;
 import vendingmachinekata.Controller;
+import vendingmachinekata.Product;
 import vendingmachinekata.VendingMachineLiterals;
 
 public class ControllerTests {
@@ -81,7 +82,7 @@ public class ControllerTests {
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
-		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.selectItem(Product.COLA);
 		assertEquals("THANK YOU",control.getDisplay());
 	}
 	
@@ -90,7 +91,7 @@ public class ControllerTests {
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
-		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.selectItem(Product.COLA);
 		assertEquals("PRICE: " +VendingMachineLiterals.COLA_COST,control.getDisplay());
 	}
 	
@@ -99,14 +100,14 @@ public class ControllerTests {
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
-		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.selectItem(Product.COLA);
 		control.getDisplay();
 		assertEquals("75",control.getDisplay());
 	}
 	
 	@Test
 	public void whenAColaIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
-		control.selectItem(VendingMachineLiterals.COLA_CODE);
+		control.selectItem(Product.COLA);
 		control.getDisplay();
 		assertEquals("INSERT COIN",control.getDisplay());
 	}

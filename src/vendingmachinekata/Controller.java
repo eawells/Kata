@@ -64,8 +64,8 @@ public class Controller {
 		return	moneyHandler.getMoneyAvailable();
 	}
 	
-	public void selectItem(String itemCode) {
-		if(itemCode.equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
+	public void selectItem(Product item) {
+		if(item.code().equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
 			if(getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
 				display.changeDisplayto("THANK YOU");
 				normalDisplay = false;
@@ -75,7 +75,7 @@ public class Controller {
 				normalDisplay = false;
 			}
 		}
-		moneyHandler.selectItem(itemCode);
+		moneyHandler.selectItem(item);
 		
 	}	
 }
