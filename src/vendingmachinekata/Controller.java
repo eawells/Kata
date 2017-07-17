@@ -65,16 +65,15 @@ public class Controller {
 	}
 	
 	public void selectItem(Product item) {
-		if(item.code().equalsIgnoreCase(VendingMachineLiterals.COLA_CODE)){
-			if(getMoneyAvailable() >= VendingMachineLiterals.COLA_COST){
-				display.changeDisplayto("THANK YOU");
-				normalDisplay = false;
-			}
-			else{
-				display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
-				normalDisplay = false;
-			}
+		if(getMoneyAvailable() >= item.cost()){
+			display.changeDisplayto("THANK YOU");
+			normalDisplay = false;
 		}
+		else{
+			display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
+			normalDisplay = false;
+		}
+		
 		moneyHandler.selectItem(item);
 		
 	}	

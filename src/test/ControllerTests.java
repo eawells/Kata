@@ -112,5 +112,15 @@ public class ControllerTests {
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
 	
+	@Test
+	public void whenACandyIsPurchasedWithADollarDisplaySaysTHANKYOU(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(Product.CANDY);
+		assertEquals("THANK YOU",control.getDisplay());
+	}
+		
 	
 }

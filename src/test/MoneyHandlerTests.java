@@ -65,4 +65,6 @@ public class MoneyHandlerTests {
 		mh.selectItem(Product.CANDY);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
+	
+	
 }
