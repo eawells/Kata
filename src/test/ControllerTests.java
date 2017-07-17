@@ -122,5 +122,11 @@ public class ControllerTests {
 		assertEquals("THANK YOU",control.getDisplay());
 	}
 		
+	@Test
+	public void whenACandyIsSelectedWithoutEnoughMoneyDisplayGivesPrice(){
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(Product.CANDY);
+		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST,control.getDisplay());
+	}
 	
 }

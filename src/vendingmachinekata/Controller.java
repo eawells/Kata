@@ -70,7 +70,7 @@ public class Controller {
 			normalDisplay = false;
 		}
 		else{
-			display.changeDisplayto("PRICE: " + VendingMachineLiterals.COLA_COST);
+			display.changeDisplayto("PRICE: " + item.cost());
 			normalDisplay = false;
 		}
 		

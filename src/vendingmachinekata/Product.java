@@ -18,7 +18,7 @@ public enum Product {
 		return code;
 	}
 	
-	protected double cost(){
+	protected int cost(){
 		return cost;
 	}
 }
