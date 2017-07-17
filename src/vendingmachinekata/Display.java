@@ -17,5 +17,4 @@ public class Display {
 		display = s;
 	}
 	
-
 }

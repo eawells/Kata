@@ -76,5 +76,13 @@ public class MoneyHandlerTests {
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
+	@Test
+	public void whenAProductIsPurchasedWith25CentsExtraCoinReturnHas25(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.selectItem(Product.CHIPS);
+		assertEquals(25,mh.getCoinReturnValue());
+	}
 	
 }

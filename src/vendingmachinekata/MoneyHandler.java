@@ -35,7 +35,8 @@ public class MoneyHandler {
 	}
 
 	public void selectItem(Product item) {
-		if(getMoneyAvailable() >= item.cost()){
+		if(moneyAvailable >= item.cost()){
+			coinReturnValue += moneyAvailable - item.cost();
 			moneyAvailable = 0;
 		}
 	}
