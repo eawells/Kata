@@ -129,5 +129,20 @@ public class ControllerTests {
 		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST,control.getDisplay()); 
 	} 
 	
+	@Test
+	public void whenACandyIsSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable(){
+		control.insertCoin(Coin.QUARTER);
+		control.insertCoin(Coin.QUARTER);
+		control.selectItem(Product.CANDY);
+		control.getDisplay();
+		assertEquals("50",control.getDisplay());
+	}
+	
+	@Test
+	public void whenACandyIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+		control.selectItem(Product.CANDY);
+		control.getDisplay();
+		assertEquals("INSERT COIN",control.getDisplay());
+	}
 	
 }
