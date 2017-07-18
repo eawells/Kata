@@ -40,6 +40,10 @@ public class MoneyHandler {
 			moneyAvailable = 0;
 		}
 	}
+
+	public String getCoinsInCoinReturn() {
+		return "Quarter";
+	}
 	
 
 }

@@ -85,4 +85,13 @@ public class MoneyHandlerTests {
 		assertEquals(25,mh.getCoinReturnValue());
 	}
 	
+	@Test
+	public void whenTheCoinReturnValueIs25ThereIsAQuarterInTheCoinReturn(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.selectItem(Product.CHIPS);
+		assertEquals("Quarter",mh.getCoinsInCoinReturn());
+	}
+	
 }

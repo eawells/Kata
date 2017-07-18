@@ -177,4 +177,6 @@ public class ControllerTests {
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
 	
+	
+	
 }
