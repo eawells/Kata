@@ -103,4 +103,14 @@ public class MoneyHandlerTests {
 		assertEquals("1 dime(s)\n",mh.getCoinsInCoinReturn());
 	}
 	
+	@Test
+	public void whenTheCoinReturnValueIs5ThereIsANickelInTheCoinReturn(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.NICKEL);
+		mh.selectItem(Product.CHIPS);
+		assertEquals("1 nickel(s)\n",mh.getCoinsInCoinReturn());
+	}
+	
+	
 }

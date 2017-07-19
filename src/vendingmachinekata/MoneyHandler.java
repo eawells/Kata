@@ -45,6 +45,7 @@ public class MoneyHandler {
 		String change = "";
 		int countQuarters = 0;
 		int countDimes = 0;
+		int countNickels = 0;
 		if(coinReturnValue >= 25){
 			countQuarters = coinReturnValue/25;
 	        coinReturnValue = coinReturnValue-(countQuarters*25);
@@ -54,6 +55,11 @@ public class MoneyHandler {
 	        countDimes = coinReturnValue/10;
 	        coinReturnValue = coinReturnValue-(countDimes*10);
 	        change += countDimes + " dime(s)\n";
+	        }
+		if(coinReturnValue >= 5){
+	        countNickels = coinReturnValue/5;
+	        coinReturnValue = coinReturnValue-(countNickels*5);
+	        change += countNickels + " nickel(s)\n";
 	        }
 		return change;
 	}
