@@ -121,5 +121,18 @@ public class MoneyHandlerTests {
 		assertEquals("1 penny(s)\n",mh.getCoinsInCoinReturn());
 	}
 	
+	@Test
+	public void whenTheCoinReturnValueIs41ThereIsOneOfEachCoin(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.PENNY);
+		mh.selectItem(Product.CHIPS);
+		assertEquals("1 quarter(s)\n1 dime(s)\n1 nickel(s)\n1 penny(s)\n",mh.getCoinsInCoinReturn());
+	}
+	
 	
 }
