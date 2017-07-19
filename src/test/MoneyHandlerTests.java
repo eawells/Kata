@@ -91,7 +91,16 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("Quarter",mh.getCoinsInCoinReturn());
+		assertEquals("1 quarter(s)\n",mh.getCoinsInCoinReturn());
+	}
+	
+	@Test
+	public void whenTheCoinReturnValueIs10ThereIsADimeInTheCoinReturn(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.DIME);
+		mh.selectItem(Product.CHIPS);
+		assertEquals("1 dime(s)\n",mh.getCoinsInCoinReturn());
 	}
 	
 }

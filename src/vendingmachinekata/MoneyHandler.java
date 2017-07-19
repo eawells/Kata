@@ -42,7 +42,20 @@ public class MoneyHandler {
 	}
 
 	public String getCoinsInCoinReturn() {
-		return "Quarter";
+		String change = "";
+		int countQuarters = 0;
+		int countDimes = 0;
+		if(coinReturnValue >= 25){
+			countQuarters = coinReturnValue/25;
+	        coinReturnValue = coinReturnValue-(countQuarters*25);
+	        change += countQuarters + " quarter(s)\n";
+	        }
+		if(coinReturnValue >= 10){
+	        countDimes = coinReturnValue/10;
+	        coinReturnValue = coinReturnValue-(countDimes*10);
+	        change += countDimes + " dime(s)\n";
+	        }
+		return change;
 	}
 	
 
