@@ -112,5 +112,14 @@ public class MoneyHandlerTests {
 		assertEquals("1 nickel(s)\n",mh.getCoinsInCoinReturn());
 	}
 	
+	@Test
+	public void whenTheCoinReturnValueIs1ThereIsAPennyInTheCoinReturn(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.PENNY);
+		mh.selectItem(Product.CHIPS);
+		assertEquals("1 penny(s)\n",mh.getCoinsInCoinReturn());
+	}
+	
 	
 }

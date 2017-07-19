@@ -46,6 +46,7 @@ public class MoneyHandler {
 		int countQuarters = 0;
 		int countDimes = 0;
 		int countNickels = 0;
+		int countPennies = 0;
 		if(coinReturnValue >= 25){
 			countQuarters = coinReturnValue/25;
 	        coinReturnValue = coinReturnValue-(countQuarters*25);
@@ -60,6 +61,11 @@ public class MoneyHandler {
 	        countNickels = coinReturnValue/5;
 	        coinReturnValue = coinReturnValue-(countNickels*5);
 	        change += countNickels + " nickel(s)\n";
+	        }
+		if(coinReturnValue >= 1){
+			countPennies = coinReturnValue/1;
+	        coinReturnValue = coinReturnValue-(countPennies*5);
+	        change += countPennies + " penny(s)\n";
 	        }
 		return change;
 	}
