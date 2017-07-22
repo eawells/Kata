@@ -76,5 +76,10 @@ public class Controller {
 		
 		moneyHandler.selectItem(item);
 		
+	}
+
+	public void returnCoins() {
+		display.changeDisplayto("INSERT COIN");
+		normalDisplay = false;
 	}	
 }

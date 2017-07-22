@@ -177,6 +177,11 @@ public class ControllerTests {
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
 	
-	
+	@Test
+	public void whenReturnCoinsIsPressedDisplayIsInsertCoin(){
+		control.insertCoin(Coin.DIME);
+		control.returnCoins();
+		assertEquals("INSERT COIN",control.getDisplay());
+	}
 	
 }
