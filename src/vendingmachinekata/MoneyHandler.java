@@ -71,6 +71,7 @@ public class MoneyHandler {
 	}
 
 	public void returnCoins() {
+		coinReturnValue = moneyAvailable;
 		moneyAvailable = 0;
 		
 	}

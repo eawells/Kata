@@ -140,4 +140,11 @@ public class MoneyHandlerTests {
 		mh.returnCoins();
 		assertEquals(0, mh.getMoneyAvailable());
 	}
+	
+	@Test
+	public void whenReturnCoinsIsPressedWithADimeCoinReturnValueIs10(){
+		mh.insertCoin(Coin.DIME);
+		mh.returnCoins();
+		assertEquals(10, mh.getCoinReturnValue());
+	}
 }
