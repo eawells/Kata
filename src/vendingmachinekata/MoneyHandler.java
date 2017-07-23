@@ -69,6 +69,11 @@ public class MoneyHandler {
 	        }
 		return change;
 	}
+
+	public void returnCoins() {
+		moneyAvailable = 0;
+		
+	}
 	
 
 }

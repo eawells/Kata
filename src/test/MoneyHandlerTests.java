@@ -134,5 +134,10 @@ public class MoneyHandlerTests {
 		assertEquals("1 quarter(s)\n1 dime(s)\n1 nickel(s)\n1 penny(s)\n",mh.getCoinsInCoinReturn());
 	}
 	
-	
+	@Test
+	public void whenReturnCoinsIsPressedMoneyAvailableIs0(){
+		mh.insertCoin(Coin.DIME);
+		mh.returnCoins();
+		assertEquals(0, mh.getMoneyAvailable());
+	}
 }
