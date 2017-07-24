@@ -147,4 +147,13 @@ public class MoneyHandlerTests {
 		mh.returnCoins();
 		assertEquals(10, mh.getCoinReturnValue());
 	}
+	
+	@Test
+	public void whenReturnCoinsIsPressedWith25CentsThereIsAQuarterInCoinReturn(){
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.NICKEL);
+		mh.returnCoins();
+		assertEquals("1 quarter(s)\n", mh.getCoinsInCoinReturn());
+	}
 }
