@@ -79,7 +79,8 @@ public class Controller {
 	}
 
 	public void returnCoins() {
-		display.changeDisplayto("INSERT COIN");
-		normalDisplay = false;
+		moneyHandler.returnCoins();
+//		display.changeDisplayto("INSERT COIN");
+		normalDisplay = true;
 	}	
 }

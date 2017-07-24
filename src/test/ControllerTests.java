@@ -184,11 +184,11 @@ public class ControllerTests {
 		assertEquals("INSERT COIN",control.getDisplay());
 	}
 	
-	@Test
-	public void whenReturnCoinsIsPressedMoneyAvailableIs0(){
-		control.insertCoin(Coin.DIME);
-		control.returnCoins();
-		assertEquals(0, control.getMoneyAvailable());
+	@Test 
+	public void whenReturnCoinsIsPressedMoneyAvailableIs0(){ 
+		control.insertCoin(Coin.DIME); 
+		control.returnCoins(); 
+		assertEquals(0, control.getMoneyAvailable()); 
 	}
 	
 }
