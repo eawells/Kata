@@ -28,5 +28,10 @@ public class ProductHandlerTests {
 		productHandler.purchase(Product.CANDY);
 		assertEquals(9, productHandler.getStock(Product.CANDY));
 	}
+	
+	@Test
+	public void whenChipsHaveNotBeenPurchasedThereAre10Left(){
+		assertEquals(10, productHandler.getStock(Product.CHIPS));
+	}
 
 }
