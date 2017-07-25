@@ -3,18 +3,18 @@ package vendingmachinekata;
 public class ProductHandler {
 	
 	private int candyStock;
-	private int chipsStock;
+	private int chipsStock; 
 	
 	public ProductHandler(){
 		candyStock = 10;
-		chipsStock = 10;
+		chipsStock = 10; 
 	}
 
 	public int getStock(Product item) {
 		if(item.code().equals(Product.CANDY.code())){
 			return candyStock;
 		}
-		return chipsStock;
+		return chipsStock; 
 	}
 
 	public void purchase(Product item) {
@@ -22,7 +22,7 @@ public class ProductHandler {
 			candyStock -= 1;
 		}
 		if(item.code().equals(Product.CANDY.code())){
-			chipsStock -= 1;
+			chipsStock -= 1; 
 		}
 	}
 
