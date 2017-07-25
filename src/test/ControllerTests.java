@@ -191,4 +191,14 @@ public class ControllerTests {
 		assertEquals(0, control.getMoneyAvailable()); 
 	}
 	
+	@Test 
+	public void whenAnItemIsOutOfStockDisplaySaysSoldOut(){
+		//Try to buy 11 bags of chips
+		for(int i = 0; i < 11; i++){
+			control.insertCoin(Coin.QUARTER);
+			control.insertCoin(Coin.QUARTER);
+			control.selectItem(Product.CHIPS);
+		}
+		assertEquals("SOLD OUT", control.getDisplay());
+	}
 }

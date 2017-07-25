@@ -4,11 +4,13 @@ public class Controller {
 	
 	private MoneyHandler moneyHandler;
 	private Display display;
+	private ProductHandler productHandler;
 	private boolean normalDisplay;
 	
 	public Controller(){
 		moneyHandler = new MoneyHandler();
 		display = new Display();
+		productHandler = new ProductHandler();
 		normalDisplay = true;
 	}
 	
@@ -65,16 +67,24 @@ public class Controller {
 	}
 	
 	public void selectItem(Product item) {
-		if(getMoneyAvailable() >= item.cost()){
-			display.changeDisplayto("THANK YOU");
-			normalDisplay = false;
+		//check if in stock to purchase, display SOLD OUT if out of stock
+		if(productHandler.getStock(item) != 0){
+			if(getMoneyAvailable() >= item.cost()){
+				display.changeDisplayto("THANK YOU");
+				normalDisplay = false;
+				productHandler.purchase(item);
+			}
+			else{
+				display.changeDisplayto("PRICE: " + item.cost() );
+				normalDisplay = false;
+			}
+			moneyHandler.selectItem(item);
 		}
 		else{
-			display.changeDisplayto("PRICE: " + item.cost() );
+			display.changeDisplayto("SOLD OUT");
 			normalDisplay = false;
 		}
 		
-		moneyHandler.selectItem(item);
 		
 	}
 
