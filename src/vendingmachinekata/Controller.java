@@ -80,7 +80,6 @@ public class Controller {
 
 	public void returnCoins() {
 		moneyHandler.returnCoins();
-//		display.changeDisplayto("INSERT COIN");
 		normalDisplay = true;
 	}	
 }
