@@ -75,6 +75,10 @@ public class MoneyHandler {
 		moneyAvailable = 0;
 		
 	}
+
+	public String getCoinsInMachine() {
+		return "None";
+	}
 	
 
 }
