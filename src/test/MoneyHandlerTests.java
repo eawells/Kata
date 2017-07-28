@@ -161,4 +161,10 @@ public class MoneyHandlerTests {
 	public void whenNoCoinsHaveBeenInsertedCoinsInMachineIsNone(){
 		assertEquals("None", mh.getCoinsInMachine());
 	}
+	
+	@Test
+	public void whenAQuaterIsInsertedCoinsInMachineIsQuarter(){
+		mh.insertCoin(Coin.QUARTER);
+		assertEquals("1 quarter(s)\n", mh.getCoinsInMachine());
+	}
 }
