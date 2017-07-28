@@ -167,4 +167,12 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		assertEquals("1 quarter(s)\n", mh.getCoinsInMachine());
 	}
+	
+	@Test
+	public void whenADimeIsInsertedCoinsInMachineIsDime(){
+		mh.insertCoin(Coin.DIME);
+		assertEquals("1 dime(s)\n", mh.getCoinsInMachine());
+	}
+	
+	
 }

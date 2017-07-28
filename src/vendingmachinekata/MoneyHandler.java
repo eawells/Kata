@@ -47,6 +47,7 @@ public class MoneyHandler {
 		}
 	}
 
+	//gives a string of the coins in coin return
 	public String getCoinsInCoinReturn() {
 		String change = makeChange(coinReturnValue);
 		coinReturnValue = 0;
@@ -81,18 +82,26 @@ public class MoneyHandler {
 	        }
 		return change;
 	}
-
+	
+	//when someone presses coin return
 	public void returnCoins() {
-		coinReturnValue = moneyAvailable;
+		coinReturnValue += moneyAvailable;
 		moneyAvailable = 0;
 		
 	}
 
 	public String getCoinsInMachine() {
+		String coins = "";
 		if(coinsInMachineQuartersDimesNickels[0] != 0){
-			return coinsInMachineQuartersDimesNickels[0] + " quarter(s)\n";
+			coins += coinsInMachineQuartersDimesNickels[0] + " quarter(s)\n";
 		}
-		return "None";
+		if(coinsInMachineQuartersDimesNickels[1] != 0){
+			coins += coinsInMachineQuartersDimesNickels[1] + " dime(s)\n";
+		}
+		if(coins.equals("")){
+			return "None";
+		}
+		return coins;
 	}
 	
 
