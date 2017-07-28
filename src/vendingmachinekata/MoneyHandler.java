@@ -63,22 +63,22 @@ public class MoneyHandler {
 		if(amount >= 25){
 			countQuarters = amount/25;
 			amount = amount-(countQuarters*25);
-	        change += countQuarters + " quarter(s)\n";
+	        change += countQuarters + " quarter(s). ";
 	        }
 		if(amount >= 10){
 	        countDimes = amount/10;
 	        amount = amount-(countDimes*10);
-	        change += countDimes + " dime(s)\n";
+	        change += countDimes + " dime(s). ";
 	        }
 		if(amount >= 5){
 	        countNickels = amount/5;
 	        amount = amount-(countNickels*5);
-	        change += countNickels + " nickel(s)\n";
+	        change += countNickels + " nickel(s). ";
 	        }
 		if(amount >= 1){
 			countPennies = amount/1;
 			amount = amount-(countPennies*5);
-	        change += countPennies + " penny(s)\n";
+	        change += countPennies + " penny(s). ";
 	        }
 		return change;
 	}
@@ -93,10 +93,13 @@ public class MoneyHandler {
 	public String getCoinsInMachine() {
 		String coins = "";
 		if(coinsInMachineQuartersDimesNickels[0] != 0){
-			coins += coinsInMachineQuartersDimesNickels[0] + " quarter(s)\n";
+			coins += coinsInMachineQuartersDimesNickels[0] + " quarter(s). ";
 		}
 		if(coinsInMachineQuartersDimesNickels[1] != 0){
-			coins += coinsInMachineQuartersDimesNickels[1] + " dime(s)\n";
+			coins += coinsInMachineQuartersDimesNickels[1] + " dime(s). ";
+		}
+		if(coinsInMachineQuartersDimesNickels[2] != 0){
+			coins += coinsInMachineQuartersDimesNickels[2] + " nickel(s). ";
 		}
 		if(coins.equals("")){
 			return "None";

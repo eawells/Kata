@@ -91,7 +91,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("1 quarter(s)\n",mh.getCoinsInCoinReturn());
+		assertEquals("1 quarter(s). ",mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -100,7 +100,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.DIME);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("1 dime(s)\n",mh.getCoinsInCoinReturn());
+		assertEquals("1 dime(s). ",mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -109,7 +109,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.NICKEL);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("1 nickel(s)\n",mh.getCoinsInCoinReturn());
+		assertEquals("1 nickel(s). ",mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -118,7 +118,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.PENNY);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("1 penny(s)\n",mh.getCoinsInCoinReturn());
+		assertEquals("1 penny(s). ",mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -131,7 +131,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.PENNY);
 		mh.selectItem(Product.CHIPS);
-		assertEquals("1 quarter(s)\n1 dime(s)\n1 nickel(s)\n1 penny(s)\n",mh.getCoinsInCoinReturn());
+		assertEquals("1 quarter(s). 1 dime(s). 1 nickel(s). 1 penny(s). ",mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -154,7 +154,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.NICKEL);
 		mh.returnCoins();
-		assertEquals("1 quarter(s)\n", mh.getCoinsInCoinReturn());
+		assertEquals("1 quarter(s). ", mh.getCoinsInCoinReturn());
 	}
 	
 	@Test
@@ -165,13 +165,19 @@ public class MoneyHandlerTests {
 	@Test
 	public void whenAQuaterIsInsertedCoinsInMachineIsQuarter(){
 		mh.insertCoin(Coin.QUARTER);
-		assertEquals("1 quarter(s)\n", mh.getCoinsInMachine());
+		assertEquals("1 quarter(s). ", mh.getCoinsInMachine());
 	}
 	
 	@Test
 	public void whenADimeIsInsertedCoinsInMachineIsDime(){
 		mh.insertCoin(Coin.DIME);
-		assertEquals("1 dime(s)\n", mh.getCoinsInMachine());
+		assertEquals("1 dime(s). ", mh.getCoinsInMachine());
+	}
+	
+	@Test
+	public void whenANickelIsInsertedCoinsInMachineIsNickel(){
+		mh.insertCoin(Coin.NICKEL);
+		assertEquals("1 nickel(s). ", mh.getCoinsInMachine());
 	}
 	
 	
