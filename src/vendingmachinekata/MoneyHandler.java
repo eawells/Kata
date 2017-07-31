@@ -76,6 +76,7 @@ public class MoneyHandler {
 	        countNickels = amount/5;
 	        amount = amount-(countNickels*5);
 	        change += countNickels + " nickel(s). ";
+	        coinsInMachineQuartersDimesNickels[2] -= countNickels;
 	        }
 		if(amount >= 1){
 			countPennies = amount/1;

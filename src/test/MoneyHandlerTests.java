@@ -206,4 +206,11 @@ public class MoneyHandlerTests {
 		assertEquals("None", mh.getCoinsInMachine());
 	}
 	
+	@Test 
+	public void whenANickelGoesToTheCoinReturnItIsNoLongerInMachine(){
+		mh.insertCoin(Coin.NICKEL);
+		mh.returnCoins();
+		mh.getCoinsInCoinReturn();
+		assertEquals("None", mh.getCoinsInMachine());
+	}
 }
