@@ -4,29 +4,30 @@ public class MoneyHandler {
 	
 	private int coinReturnValue;
 	private int moneyAvailable;
-	private int[] coinsInMachineQuartersDimesNickels;
+	private int[] coinsInMachineQuartersDimesNickelsPennies;
 	
 	public MoneyHandler(){
 		coinReturnValue = 0;
 		moneyAvailable = 0;
-		coinsInMachineQuartersDimesNickels = new int[3];
+		coinsInMachineQuartersDimesNickelsPennies = new int[4];
 	}
 	
 	public void insertCoin(Coin coin) {
 		if(coin.mass() == VendingMachineLiterals.PENNY_MASS && coin.diameter() == VendingMachineLiterals.PENNY_DIAMETER){
 			coinReturnValue += VendingMachineLiterals.PENNY_VALUE;
+			coinsInMachineQuartersDimesNickelsPennies[3] += 1;
 		}
 		if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
 			moneyAvailable += VendingMachineLiterals.QUARTER_VALUE;
-			coinsInMachineQuartersDimesNickels[0] += 1;
+			coinsInMachineQuartersDimesNickelsPennies[0] += 1;
 		}
 		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
 			moneyAvailable += VendingMachineLiterals.DIME_VALUE;
-			coinsInMachineQuartersDimesNickels[1] += 1;
+			coinsInMachineQuartersDimesNickelsPennies[1] += 1;
 		}
 		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
 			moneyAvailable += VendingMachineLiterals.NICKEL_VALUE;
-			coinsInMachineQuartersDimesNickels[2] += 1;
+			coinsInMachineQuartersDimesNickelsPennies[2] += 1;
 		}
 		
 		
@@ -62,26 +63,40 @@ public class MoneyHandler {
 		int countPennies = 0;
 		if(amount >= 25){
 			countQuarters = amount/25;
-			amount = amount-(countQuarters*25);
-	        change += countQuarters + " quarter(s). ";
-	        coinsInMachineQuartersDimesNickels[0] -= countQuarters;
-	        }
+			//take the minimum between the quarters that need to be given and the number of quarters there are
+			countQuarters = Math.min(countQuarters, coinsInMachineQuartersDimesNickelsPennies[0]);
+			if(countQuarters != 0){
+				amount = amount-(countQuarters*25);
+				change += countQuarters + " quarter(s). ";
+				coinsInMachineQuartersDimesNickelsPennies[0] -= countQuarters;
+				}
+			}
 		if(amount >= 10){
 			countDimes = amount/10;
-	        amount = amount-(countDimes*10);
-	        change += countDimes + " dime(s). ";
-	        coinsInMachineQuartersDimesNickels[1] -= countDimes;
+			countDimes = Math.min(countDimes, coinsInMachineQuartersDimesNickelsPennies[1]);
+			if(countDimes != 0){
+				amount = amount-(countDimes*10);
+		        change += countDimes + " dime(s). ";
+		        coinsInMachineQuartersDimesNickelsPennies[1] -= countDimes;
+				}
 	        }
 		if(amount >= 5){
 	        countNickels = amount/5;
-	        amount = amount-(countNickels*5);
-	        change += countNickels + " nickel(s). ";
-	        coinsInMachineQuartersDimesNickels[2] -= countNickels;
+	        countNickels = Math.min(countNickels, coinsInMachineQuartersDimesNickelsPennies[2]);
+	        if(countNickels != 0){
+		        amount = amount-(countNickels*5);
+		        change += countNickels + " nickel(s). ";
+		        coinsInMachineQuartersDimesNickelsPennies[2] -= countNickels;
+	        	}
 	        }
 		if(amount >= 1){
 			countPennies = amount/1;
-			amount = amount-(countPennies*5);
-	        change += countPennies + " penny(s). ";
+			countPennies = Math.min(countPennies, coinsInMachineQuartersDimesNickelsPennies[3]);
+			if(countPennies != 0){
+				amount = amount-(countPennies*5);
+				change += countPennies + " penny(s). ";
+				coinsInMachineQuartersDimesNickelsPennies[3] -= countPennies;
+			}
 	        }
 		return change;
 	}
@@ -95,14 +110,17 @@ public class MoneyHandler {
 
 	public String getCoinsInMachine() {
 		String coins = "";
-		if(coinsInMachineQuartersDimesNickels[0] != 0){
-			coins += coinsInMachineQuartersDimesNickels[0] + " quarter(s). ";
+		if(coinsInMachineQuartersDimesNickelsPennies[0] != 0){
+			coins += coinsInMachineQuartersDimesNickelsPennies[0] + " quarter(s). ";
 		}
-		if(coinsInMachineQuartersDimesNickels[1] != 0){
-			coins += coinsInMachineQuartersDimesNickels[1] + " dime(s). ";
+		if(coinsInMachineQuartersDimesNickelsPennies[1] != 0){
+			coins += coinsInMachineQuartersDimesNickelsPennies[1] + " dime(s). ";
 		}
-		if(coinsInMachineQuartersDimesNickels[2] != 0){
-			coins += coinsInMachineQuartersDimesNickels[2] + " nickel(s). ";
+		if(coinsInMachineQuartersDimesNickelsPennies[2] != 0){
+			coins += coinsInMachineQuartersDimesNickelsPennies[2] + " nickel(s). ";
+		}
+		if(coinsInMachineQuartersDimesNickelsPennies[3] != 0){
+			coins += coinsInMachineQuartersDimesNickelsPennies[2] + " penny(s). ";
 		}
 		if(coins.equals("")){
 			return "None";

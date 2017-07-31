@@ -127,7 +127,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.DIME);
-		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.NICKEL);
+		mh.insertCoin(Coin.NICKEL);
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.PENNY);
 		mh.selectItem(Product.CHIPS);
@@ -150,9 +151,7 @@ public class MoneyHandlerTests {
 	
 	@Test
 	public void whenReturnCoinsIsPressedWith25CentsThereIsAQuarterInCoinReturn(){
-		mh.insertCoin(Coin.DIME);
-		mh.insertCoin(Coin.DIME);
-		mh.insertCoin(Coin.NICKEL);
+		mh.insertCoin(Coin.QUARTER);
 		mh.returnCoins();
 		assertEquals("1 quarter(s). ", mh.getCoinsInCoinReturn());
 	}
@@ -212,5 +211,13 @@ public class MoneyHandlerTests {
 		mh.returnCoins();
 		mh.getCoinsInCoinReturn();
 		assertEquals("None", mh.getCoinsInMachine());
+	}
+	
+	@Test
+	public void whenOnlyNickelsAreAvailableMachineOnlyGivesNickels(){
+		mh.insertCoin(Coin.NICKEL);
+		mh.insertCoin(Coin.NICKEL);
+		mh.returnCoins();
+		assertEquals("2 nickel(s). ", mh.getCoinsInCoinReturn());
 	}
 }
