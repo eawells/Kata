@@ -188,4 +188,14 @@ public class MoneyHandlerTests {
 		assertEquals("None", mh.getCoinsInMachine());
 	}
 	
+	@Test
+	public void whenAQuarterInChangeIsGivenItIsNoLongerInMachine(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.insertCoin(Coin.QUARTER);
+		mh.selectItem(Product.CHIPS);
+		mh.getCoinsInCoinReturn();
+		assertEquals("2 quarter(s). ", mh.getCoinsInMachine());
+	}
+	
 }
