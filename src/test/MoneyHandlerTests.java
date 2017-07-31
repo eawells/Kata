@@ -198,4 +198,12 @@ public class MoneyHandlerTests {
 		assertEquals("2 quarter(s). ", mh.getCoinsInMachine());
 	}
 	
+	@Test 
+	public void whenADimeGoesToTheCoinReturnItIsNoLongerInMachine(){
+		mh.insertCoin(Coin.DIME);
+		mh.returnCoins();
+		mh.getCoinsInCoinReturn();
+		assertEquals("None", mh.getCoinsInMachine());
+	}
+	
 }
