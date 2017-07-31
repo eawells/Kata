@@ -180,5 +180,12 @@ public class MoneyHandlerTests {
 		assertEquals("1 nickel(s). ", mh.getCoinsInMachine());
 	}
 	
+	@Test
+	public void whenAQuarterGoesToTheCoinReturnItIsNoLongerInMachine(){
+		mh.insertCoin(Coin.QUARTER);
+		mh.returnCoins();
+		mh.getCoinsInCoinReturn();
+		assertEquals("None", mh.getCoinsInMachine());
+	}
 	
 }

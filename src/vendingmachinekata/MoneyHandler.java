@@ -64,6 +64,7 @@ public class MoneyHandler {
 			countQuarters = amount/25;
 			amount = amount-(countQuarters*25);
 	        change += countQuarters + " quarter(s). ";
+	        coinsInMachineQuartersDimesNickels[0] -= countQuarters;
 	        }
 		if(amount >= 10){
 	        countDimes = amount/10;
