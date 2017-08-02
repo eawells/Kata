@@ -108,24 +108,12 @@ public class MoneyHandler {
 		
 	}
 
-	public String getCoinsInMachine() {
-		String coins = "";
-		if(coinsInMachineQuartersDimesNickelsPennies[0] != 0){
-			coins += coinsInMachineQuartersDimesNickelsPennies[0] + " quarter(s). ";
-		}
-		if(coinsInMachineQuartersDimesNickelsPennies[1] != 0){
-			coins += coinsInMachineQuartersDimesNickelsPennies[1] + " dime(s). ";
-		}
-		if(coinsInMachineQuartersDimesNickelsPennies[2] != 0){
-			coins += coinsInMachineQuartersDimesNickelsPennies[2] + " nickel(s). ";
-		}
-		if(coinsInMachineQuartersDimesNickelsPennies[3] != 0){
-			coins += coinsInMachineQuartersDimesNickelsPennies[2] + " penny(s). ";
-		}
-		if(coins.equals("")){
-			return "None";
-		}
-		return coins;
+	public int[] getCoinsInMachine() {
+		return coinsInMachineQuartersDimesNickelsPennies;
+	}
+
+	public boolean canChangeBeMade() {
+		return false;
 	}
 	
 

@@ -92,4 +92,9 @@ public class Controller {
 		moneyHandler.returnCoins();
 		normalDisplay = true;
 	}	
+	
+	public void updateDisplay(){
+		//check if need exact change
+		
+	}
 }

@@ -157,26 +157,36 @@ public class MoneyHandlerTests {
 	}
 	
 	@Test
-	public void whenNoCoinsHaveBeenInsertedCoinsInMachineIsNone(){
-		assertEquals("None", mh.getCoinsInMachine());
+	public void whenNoCoinsHaveBeenInsertedQuartersInMachineIsZero(){
+		assertEquals(0, mh.getCoinsInMachine()[0]);
+	}
+	
+	@Test
+	public void whenNoCoinsHaveBeenInsertedDimesInMachineIsZero(){
+		assertEquals(0, mh.getCoinsInMachine()[1]);
+	}
+	
+	@Test
+	public void whenNoCoinsHaveBeenInsertedNickelsInMachineIsZero(){
+		assertEquals(0, mh.getCoinsInMachine()[2]);
 	}
 	
 	@Test
 	public void whenAQuaterIsInsertedCoinsInMachineIsQuarter(){
 		mh.insertCoin(Coin.QUARTER);
-		assertEquals("1 quarter(s). ", mh.getCoinsInMachine());
+		assertEquals(1, mh.getCoinsInMachine()[0]);
 	}
 	
 	@Test
 	public void whenADimeIsInsertedCoinsInMachineIsDime(){
 		mh.insertCoin(Coin.DIME);
-		assertEquals("1 dime(s). ", mh.getCoinsInMachine());
+		assertEquals(1, mh.getCoinsInMachine()[1]);
 	}
 	
 	@Test
 	public void whenANickelIsInsertedCoinsInMachineIsNickel(){
 		mh.insertCoin(Coin.NICKEL);
-		assertEquals("1 nickel(s). ", mh.getCoinsInMachine());
+		assertEquals(1, mh.getCoinsInMachine()[2]);
 	}
 	
 	@Test
@@ -184,7 +194,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.returnCoins();
 		mh.getCoinsInCoinReturn();
-		assertEquals("None", mh.getCoinsInMachine());
+		assertEquals(0, mh.getCoinsInMachine()[0]);
 	}
 	
 	@Test
@@ -194,7 +204,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.selectItem(Product.CHIPS);
 		mh.getCoinsInCoinReturn();
-		assertEquals("2 quarter(s). ", mh.getCoinsInMachine());
+		assertEquals(2, mh.getCoinsInMachine()[0]);
 	}
 	
 	@Test 
@@ -202,7 +212,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		mh.returnCoins();
 		mh.getCoinsInCoinReturn();
-		assertEquals("None", mh.getCoinsInMachine());
+		assertEquals(0, mh.getCoinsInMachine()[1]);
 	}
 	
 	@Test 
@@ -210,7 +220,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.NICKEL);
 		mh.returnCoins();
 		mh.getCoinsInCoinReturn();
-		assertEquals("None", mh.getCoinsInMachine());
+		assertEquals(0, mh.getCoinsInMachine()[2]);
 	}
 	
 	@Test
@@ -219,5 +229,10 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.NICKEL);
 		mh.returnCoins();
 		assertEquals("2 nickel(s). ", mh.getCoinsInCoinReturn());
+	}
+	
+	@Test
+	public void whenNoCoinsHaveBeenInsertedChangeCannotBeMade(){
+		assertEquals(false, mh.canChangeBeMade());
 	}
 }
