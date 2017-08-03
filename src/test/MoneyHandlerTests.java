@@ -235,4 +235,12 @@ public class MoneyHandlerTests {
 	public void whenNoCoinsHaveBeenInsertedChangeCannotBeMade(){
 		assertEquals(false, mh.canChangeBeMade());
 	}
+	
+	@Test
+	public void when2DimesAndANickelAreInTheMachineChangeCanBeMade(){
+		mh.insertCoin(Coin.NICKEL);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.DIME);
+		assertEquals(true, mh.canChangeBeMade());
+	}
 }

@@ -5,6 +5,7 @@ public class MoneyHandler {
 	private int coinReturnValue;
 	private int moneyAvailable;
 	private int[] coinsInMachineQuartersDimesNickelsPennies;
+	private int[] productCostsColaChipsCandy = {VendingMachineLiterals.COLA_COST, VendingMachineLiterals.CHIPS_COST, VendingMachineLiterals.CANDY_COST};
 	
 	public MoneyHandler(){
 		coinReturnValue = 0;
@@ -113,6 +114,21 @@ public class MoneyHandler {
 	}
 
 	public boolean canChangeBeMade() {
+		/*for any product price that can be purchased with quarters, dimes, nickels,
+		the greatest amount of change needed would be quarter value - nickel value. However, 
+		if one of the products is not divisible by 10, then a nickel would also be needed
+		*/
+		for(int i =0; i <productCostsColaChipsCandy.length; i++){
+			if(productCostsColaChipsCandy[i]%10 != 0){
+				if(coinsInMachineQuartersDimesNickelsPennies[2] ==0){
+					return false;
+				}
+			}
+		}
+		int amountInMachine = coinsInMachineQuartersDimesNickelsPennies[1]*10 + coinsInMachineQuartersDimesNickelsPennies[2]*5;
+		if(amountInMachine >= VendingMachineLiterals.QUARTER_VALUE- VendingMachineLiterals.NICKEL_VALUE){
+			return true;
+		}
 		return false;
 	}
 	
