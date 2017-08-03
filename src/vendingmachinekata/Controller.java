@@ -5,13 +5,12 @@ public class Controller {
 	private MoneyHandler moneyHandler;
 	private Display display;
 	private ProductHandler productHandler;
-	private boolean normalDisplay;
 	
 	public Controller(){
 		moneyHandler = new MoneyHandler();
 		display = new Display();
 		productHandler = new ProductHandler();
-		normalDisplay = true;
+		updateDisplay();
 	}
 	
 	public void insertCoin(Coin coin) {
@@ -50,15 +49,9 @@ public class Controller {
 	}
 
 	public String getDisplay() {
-		if(!normalDisplay){
-			normalDisplay = true;
-			return display.getDisplay();
-		}
-		if(getMoneyAvailable() > 0){
-			return getMoneyAvailable()+"";
-		}
-		return "INSERT COIN";
-		
+		String newDisplay = display.getDisplay();
+		updateDisplay();
+		return newDisplay;
 		 	
 	}
 	
@@ -71,30 +64,32 @@ public class Controller {
 		if(productHandler.getStock(item) != 0){
 			if(getMoneyAvailable() >= item.cost()){
 				display.changeDisplayto("THANK YOU");
-				normalDisplay = false;
 				productHandler.purchase(item);
+				moneyHandler.selectItem(item);
 			}
 			else{
 				display.changeDisplayto("PRICE: " + item.cost() );
-				normalDisplay = false;
-			}
-			moneyHandler.selectItem(item);
+			}	
 		}
 		else{
 			display.changeDisplayto("SOLD OUT");
-			normalDisplay = false;
-		}
-		
-		
+		}		
 	}
 
 	public void returnCoins() {
 		moneyHandler.returnCoins();
-		normalDisplay = true;
+		updateDisplay();
 	}	
 	
-	public void updateDisplay(){
-		//check if need exact change
-		
+	private void updateDisplay(){
+		if(getMoneyAvailable() > 0){
+			display.changeDisplayto(getMoneyAvailable()+"");
+		}
+		else if(!moneyHandler.changeCanBeMade()){
+			display.changeDisplayto("EXACT CHANGE ONLY");
+		}
+		else{
+			display.changeDisplayto("INSERT COIN");
+		}
 	}
 }

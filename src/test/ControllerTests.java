@@ -106,10 +106,10 @@ public class ControllerTests {
 	}
 	
 	@Test
-	public void whenAColaIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+	public void whenAColaIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly(){
 		control.selectItem(Product.COLA);
 		control.getDisplay();
-		assertEquals("INSERT COIN",control.getDisplay());
+		assertEquals("EXACT CHANGE ONLY",control.getDisplay());
 	}
 		
 	@Test
@@ -139,10 +139,10 @@ public class ControllerTests {
 	}
 	
 	@Test
-	public void whenACandyIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+	public void whenACandyIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly(){
 		control.selectItem(Product.CANDY);
 		control.getDisplay();
-		assertEquals("INSERT COIN",control.getDisplay());
+		assertEquals("EXACT CHANGE ONLY",control.getDisplay());
 	}
 	
 	@Test
@@ -171,17 +171,17 @@ public class ControllerTests {
 	}
 	
 	@Test
-	public void whenChipsAreSelectedWithoutAnyMoneySecondCheckToDisplayGivesInsertCoin(){
+	public void whenChipsAreSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly(){
 		control.selectItem(Product.CHIPS);
 		control.getDisplay();
-		assertEquals("INSERT COIN",control.getDisplay());
+		assertEquals("EXACT CHANGE ONLY",control.getDisplay());
 	}
 	
 	@Test
-	public void whenReturnCoinsIsPressedDisplayIsInsertCoin(){
+	public void whenReturnCoinsIsPressedDisplayIsExactChangeOnlyIfThereAreNoCoinsInMachine(){
 		control.insertCoin(Coin.DIME);
 		control.returnCoins();
-		assertEquals("INSERT COIN",control.getDisplay());
+		assertEquals("EXACT CHANGE ONLY",control.getDisplay());
 	}
 	
 	@Test 
@@ -201,4 +201,10 @@ public class ControllerTests {
 		}
 		assertEquals("SOLD OUT", control.getDisplay());
 	}
+	
+	@Test 
+	public void whenChangeCannotBeMadeDisplaySaysExactChangeOnly(){
+		assertEquals("EXACT CHANGE ONLY", control.getDisplay());
+	}
+	
 }

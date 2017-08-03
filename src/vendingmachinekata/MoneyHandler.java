@@ -113,7 +113,7 @@ public class MoneyHandler {
 		return coinsInMachineQuartersDimesNickelsPennies;
 	}
 
-	public boolean canChangeBeMade() {
+	public boolean changeCanBeMade() {
 		/*for any product price that can be purchased with quarters, dimes, nickels,
 		the greatest amount of change needed would be quarter value - nickel value. However, 
 		if one of the products is not divisible by 10, then a nickel would also be needed
