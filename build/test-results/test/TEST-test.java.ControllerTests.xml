@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.ControllerTests" tests="24" skipped="0" failures="0" errors="0" timestamp="2017-08-05T16:46:54" hostname="DESKTOP-FBOTNM7" time="0.014">
+  <properties/>
+  <testcase name="whenReturnCoinsIsPressedMoneyAvailableIs0" classname="test.java.ControllerTests" time="0.003"/>
+  <testcase name="whenANickelIsInsertedTheDisplaySays5" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenANickelADimeAPennyAndAQuarterAreInsertedTheMoneyAvailableIs40" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenAColaIsSelectedWithoutEnoughMoneyDisplayGivesPrice" classname="test.java.ControllerTests" time="0.001"/>
+  <testcase name="whenAColaIsSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenACandyIsPurchasedWithADollarDisplaySaysTHANKYOU" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenAColaIsPurchasedWithADollarDisplaySaysTHANKYOU" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenAnItemIsOutOfStockDisplaySaysSoldOut" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenTwoNickelsAreInsertedTheDisplaySays10" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenCandyIsSelectedWithoutEnoughMoneyDisplayGivesPrice" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenReturnCoinsIsPressedDisplayIsExactChangeOnlyIfThereAreNoCoinsInMachine" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenChipsAreSelectedWithoutEnoughMoneyDisplayGivesPrice" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenACandyIsSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenAQuarterIsInsertedTheDisplaySays25" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenADimeIsInsertedTheDisplaySays10" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenChipsAreSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly" classname="test.java.ControllerTests" time="0.001"/>
+  <testcase name="whenChangeCannotBeMadeDisplaySaysExactChangeOnly" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenACandyIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenAColaIsSelectedWithoutAnyMoneySecondCheckToDisplayGivesExactChangeOnly" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenTwoQuartersAreInsertedTheDisplaySays50" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenANickelADimeAPennyAndAQuarterAreInsertedTheDisplaySays40" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenTwoDimesAreInsertedTheDisplaySays20" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenChipsAreSelectedWithoutEnoughMoneySecondCheckToDisplayGivesMoneyAvailable" classname="test.java.ControllerTests" time="0.0"/>
+  <testcase name="whenChipsArePurchasedWithADollarDisplaySaysTHANKYOU" classname="test.java.ControllerTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

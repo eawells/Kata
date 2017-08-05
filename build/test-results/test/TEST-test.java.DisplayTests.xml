@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.DisplayTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-08-05T16:46:54" hostname="DESKTOP-FBOTNM7" time="0.0">
+  <properties/>
+  <testcase name="whenNoCoinIsInsertedDisplaySaysINSERTCOIN" classname="test.java.DisplayTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
