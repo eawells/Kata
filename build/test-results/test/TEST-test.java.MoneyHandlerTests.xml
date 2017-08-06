@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.MoneyHandlerTests" tests="29" skipped="0" failures="0" errors="0" timestamp="2017-08-05T16:46:54" hostname="DESKTOP-FBOTNM7" time="0.007">
+<testsuite name="test.java.MoneyHandlerTests" tests="29" skipped="0" failures="0" errors="0" timestamp="2017-08-06T17:57:19" hostname="DESKTOP-FBOTNM7" time="0.006">
   <properties/>
   <testcase name="whenReturnCoinsIsPressedMoneyAvailableIs0" classname="test.java.MoneyHandlerTests" time="0.001"/>
   <testcase name="whenAQuarterIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy25" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenAProductIsPurchasedWith25CentsExtraCoinReturnHas25" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenANickelIsInsertedMoneyThatCanBeUsedToBuyIsIncreasedBy5" classname="test.java.MoneyHandlerTests" time="0.0"/>
-  <testcase name="whenAQuaterIsInsertedCoinsInMachineIsQuarter" classname="test.java.MoneyHandlerTests" time="0.0"/>
+  <testcase name="whenAQuaterIsInsertedCoinsInMachineIsQuarter" classname="test.java.MoneyHandlerTests" time="0.001"/>
   <testcase name="whenChipsArePurchasedTheMoneyAvailableIs0" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenAColaIsPurchasedTheMoneyAvailableIs0" classname="test.java.MoneyHandlerTests" time="0.0"/>
-  <testcase name="whenNoCoinsHaveBeenInsertedQuartersInMachineIsZero" classname="test.java.MoneyHandlerTests" time="0.001"/>
+  <testcase name="whenNoCoinsHaveBeenInsertedQuartersInMachineIsZero" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenAQuarterGoesToTheCoinReturnItIsNoLongerInMachine" classname="test.java.MoneyHandlerTests" time="0.0"/>
-  <testcase name="whenOnlyNickelsAreAvailableMachineOnlyGivesNickels" classname="test.java.MoneyHandlerTests" time="0.0"/>
+  <testcase name="whenOnlyNickelsAreAvailableMachineOnlyGivesNickels" classname="test.java.MoneyHandlerTests" time="0.001"/>
   <testcase name="whenReturnCoinsIsPressedWith25CentsThereIsAQuarterInCoinReturn" classname="test.java.MoneyHandlerTests" time="0.0"/>
-  <testcase name="whenTheCoinReturnValueIs5ThereIsANickelInTheCoinReturn" classname="test.java.MoneyHandlerTests" time="0.001"/>
+  <testcase name="whenTheCoinReturnValueIs5ThereIsANickelInTheCoinReturn" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenANickelGoesToTheCoinReturnItIsNoLongerInMachine" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenAPennyIsInsertedCoinReturnValueIsPlus1" classname="test.java.MoneyHandlerTests" time="0.0"/>
-  <testcase name="whenReturnCoinsIsPressedWithADimeCoinReturnValueIs10" classname="test.java.MoneyHandlerTests" time="0.0"/>
+  <testcase name="whenReturnCoinsIsPressedWithADimeCoinReturnValueIs10" classname="test.java.MoneyHandlerTests" time="0.001"/>
   <testcase name="whenTheCoinReturnValueIs25ThereIsAQuarterInTheCoinReturn" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenTheCoinReturnValueIs1ThereIsAPennyInTheCoinReturn" classname="test.java.MoneyHandlerTests" time="0.0"/>
   <testcase name="whenAQuarterInChangeIsGivenItIsNoLongerInMachine" classname="test.java.MoneyHandlerTests" time="0.0"/>

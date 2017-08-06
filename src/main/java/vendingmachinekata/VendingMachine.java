@@ -6,9 +6,10 @@ public class VendingMachine {
 	
 	public static void main(String[] args) {
 		Controller controller = new Controller();
-		System.out.println("VENDING MACHINE");
+		System.out.println("\nVENDING MACHINE\n");
+		System.out.println("DISPLAY: " + controller.getDisplay());
 		displayOptions();
-		System.out.println("Display: " + controller.getDisplay() + "\n");
+		System.out.println("");
 		Scanner userInput = new Scanner(System.in);
 		
 		String buttonPressed;
@@ -17,6 +18,9 @@ public class VendingMachine {
 			
 			if(buttonPressed.equals(VendingMachineLiterals.EXIT)){
 				return;
+			}
+			else if(buttonPressed.isEmpty()){
+				invalidKey();
 			}
 			else if(buttonPressed.charAt(0)==VendingMachineLiterals.INSERT_COIN){
 				//change the buttonPressed into a string without spaces or parenthesis
@@ -100,27 +104,33 @@ public class VendingMachine {
 				displayOptions();
 			}
 			else if(!buttonPressed.equals(VendingMachineLiterals.DISPLAY_REFRESH)){
-				System.out.println("Invaid key. Please try again.");
+				invalidKey();
 			}
-			System.out.println("\nPress H for help.\nDisplay: " + controller.getDisplay()+ "\n");
+			System.out.println("\nPress " + VendingMachineLiterals.HELP + " for help.\nDISPLAY: " + controller.getDisplay()+ "\n");
 		}
 	}
 	private static void displayOptions(){
-		System.out.println("Keys:\n" + VendingMachineLiterals.EXIT + " is exit.");
-		System.out.println(VendingMachineLiterals.INSERT_COIN +"(coins) is insert coin. For example, I(Q D N P) would insert a quarter, a dime, "
-				+ "a nickel, and a penny.");
-		System.out.println(VendingMachineLiterals.RETURN_COINS +" is return inserted coins.");
-		System.out.println(VendingMachineLiterals.PURCHASE +"(item) is purchase item. For example, P("+ VendingMachineLiterals.COLA_CODE + ") "
-				+ "would select cola for purchase. Only one item can be purchased at a time.");
-		System.out.println(VendingMachineLiterals.DISPLAY_REFRESH +" is refresh display.");
-		System.out.println(VendingMachineLiterals.HELP +" is help (display all options again).");
-		System.out.println("This machine only accepts quarters, nickels, and dimes.");
 		System.out.println("\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST + " CENTS");
 		System.out.println(VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST + " CENTS");
 		System.out.println(VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST + " CENTS\n");
+		System.out.println("Keys:\n" + VendingMachineLiterals.EXIT + " is exit.");
+		System.out.println(VendingMachineLiterals.INSERT_COIN +"(coins) is insert coin. For example, " + VendingMachineLiterals.INSERT_COIN 
+				+ "(Q D N P) would insert a quarter, a dime, a nickel, and a penny.");
+		System.out.println(VendingMachineLiterals.RETURN_COINS +" is return inserted coins.");
+		System.out.println(VendingMachineLiterals.PURCHASE +"(item) is purchase item. For example, "+ VendingMachineLiterals.PURCHASE 
+				+ "("+ VendingMachineLiterals.COLA_CODE + ") would select cola for purchase. Only one item can be purchased at a time.");
+		System.out.println(VendingMachineLiterals.DISPLAY_REFRESH +" is refresh display.");
+		System.out.println(VendingMachineLiterals.HELP +" is help (display all options again).");
+		System.out.println("This machine only accepts quarters, nickels, and dimes.");
+		
 	}
 	
 	private static void invalidKeyFormat(){
 		System.out.println("Invaid key format. Please try again.");
 	}
+	
+	private static void invalidKey(){
+		System.out.println("Invaid key. Please try again.");
+	}
+	
 }
