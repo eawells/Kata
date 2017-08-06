@@ -1,0 +1,4 @@
+# Vending Machine
+In this project, I used test driven development (TDD) to make the brains of a vending machine. It accepts money, makes change, maintains inventory, and dispenses products. This was the first time that I used TDD. It was fun to practice and learn how to do it. It also helped me write better code. Main is the only class that I did not explictly make junit tests for.
+# Running the Vending Machine
+In this project, I also learned how to use gradle to build a java project. To run the project: Open the command line in the directory VendingMachineKata (the directory that contains src). Type "gradle build" to build the project. Then type "java -jar build\libs\VendingMachineKata.jar" to run the project. Your screen should look like this: https://user-images.githubusercontent.com/27322821/29007424-a3e10454-7ac8-11e7-9672-5cfd7d0673eb.png. 
