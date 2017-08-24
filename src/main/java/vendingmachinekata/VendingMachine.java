@@ -110,9 +110,9 @@ public class VendingMachine {
 		}
 	}
 	private static void displayOptions(){
-		System.out.println("\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST + " CENTS");
-		System.out.println(VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST + " CENTS");
-		System.out.println(VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST + " CENTS\n");
+		System.out.println("\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST_CENTS + " CENTS");
+		System.out.println(VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST_CENTS + " CENTS");
+		System.out.println(VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST_CENTS + " CENTS\n");
 		System.out.println("Keys:\n" + VendingMachineLiterals.EXIT + " is exit.");
 		System.out.println(VendingMachineLiterals.INSERT_COIN +"(coins) is insert coin. For example, " + VendingMachineLiterals.INSERT_COIN 
 				+ "(Q D N P) would insert a quarter, a dime, a nickel, and a penny.");

@@ -92,7 +92,7 @@ public class ControllerTests {
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
 		control.selectItem(Product.COLA);
-		assertEquals("PRICE: " +VendingMachineLiterals.COLA_COST,control.getDisplay());
+		assertEquals("PRICE: " +VendingMachineLiterals.COLA_COST_CENTS,control.getDisplay());
 	}
 	
 	@Test
@@ -126,7 +126,7 @@ public class ControllerTests {
 	public void whenCandyIsSelectedWithoutEnoughMoneyDisplayGivesPrice(){ 
 		control.insertCoin(Coin.QUARTER); 
 		control.selectItem(Product.CANDY); 
-		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST,control.getDisplay()); 
+		assertEquals("PRICE: " +VendingMachineLiterals.CANDY_COST_CENTS,control.getDisplay()); 
 	} 
 	
 	@Test
@@ -159,7 +159,7 @@ public class ControllerTests {
 	public void whenChipsAreSelectedWithoutEnoughMoneyDisplayGivesPrice(){ 
 		control.insertCoin(Coin.QUARTER); 
 		control.selectItem(Product.CHIPS); 
-		assertEquals("PRICE: " +VendingMachineLiterals.CHIPS_COST,control.getDisplay()); 
+		assertEquals("PRICE: " +VendingMachineLiterals.CHIPS_COST_CENTS,control.getDisplay()); 
 	} 
 	
 	@Test

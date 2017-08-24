@@ -5,7 +5,7 @@ public class MoneyHandler {
 	private int coinReturnValue;
 	private int moneyAvailable;
 	private int[] coinsInMachineQuartersDimesNickelsPennies;
-	private int[] productCostsColaChipsCandy = {VendingMachineLiterals.COLA_COST, VendingMachineLiterals.CHIPS_COST, VendingMachineLiterals.CANDY_COST};
+	private int[] productCostsColaChipsCandy = {VendingMachineLiterals.COLA_COST_CENTS, VendingMachineLiterals.CHIPS_COST_CENTS, VendingMachineLiterals.CANDY_COST_CENTS};
 	
 	public MoneyHandler(){
 		coinReturnValue = 0;
@@ -14,20 +14,20 @@ public class MoneyHandler {
 	}
 	
 	public void insertCoin(Coin coin) {
-		if(coin.mass() == VendingMachineLiterals.PENNY_MASS && coin.diameter() == VendingMachineLiterals.PENNY_DIAMETER){
-			coinReturnValue += VendingMachineLiterals.PENNY_VALUE;
+		if(coin.mass() == VendingMachineLiterals.PENNY_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.PENNY_DIAMETER_MM){
+			coinReturnValue += VendingMachineLiterals.PENNY_VALUE_CENTS;
 			coinsInMachineQuartersDimesNickelsPennies[3] += 1;
 		}
-		if(coin.mass() == VendingMachineLiterals.QUARTER_MASS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER){
-			moneyAvailable += VendingMachineLiterals.QUARTER_VALUE;
+		if(coin.mass() == VendingMachineLiterals.QUARTER_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER_MM){
+			moneyAvailable += VendingMachineLiterals.QUARTER_VALUE_CENTS;
 			coinsInMachineQuartersDimesNickelsPennies[0] += 1;
 		}
-		if(coin.mass() == VendingMachineLiterals.DIME_MASS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER){
-			moneyAvailable += VendingMachineLiterals.DIME_VALUE;
+		if(coin.mass() == VendingMachineLiterals.DIME_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER_MM){
+			moneyAvailable += VendingMachineLiterals.DIME_VALUE_CENTS;
 			coinsInMachineQuartersDimesNickelsPennies[1] += 1;
 		}
-		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER){
-			moneyAvailable += VendingMachineLiterals.NICKEL_VALUE;
+		if(coin.mass() == VendingMachineLiterals.NICKEL_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER_MM){
+			moneyAvailable += VendingMachineLiterals.NICKEL_VALUE_CENTS;
 			coinsInMachineQuartersDimesNickelsPennies[2] += 1;
 		}
 		
@@ -136,7 +136,7 @@ public class MoneyHandler {
 			}
 		}
 		int amountInMachine = coinsInMachineQuartersDimesNickelsPennies[1]*10 + coinsInMachineQuartersDimesNickelsPennies[2]*5;
-		if(amountInMachine >= VendingMachineLiterals.QUARTER_VALUE- VendingMachineLiterals.NICKEL_VALUE){
+		if(amountInMachine >= VendingMachineLiterals.QUARTER_VALUE_CENTS- VendingMachineLiterals.NICKEL_VALUE_CENTS){
 			return true;
 		}
 		return false;
