@@ -21,6 +21,10 @@ public class VendingMachineLiterals {
 	public static final int CHIPS_COST_CENTS = 50;
 	public static final int CANDY_COST_CENTS = 65;
 	
+	public static final int COLA_MAX_STOCK = 10;
+	public static final int CHIPS_MAX_STOCK = 10;
+	public static final int CANDY_MAX_STOCK = 10;
+	
 	public static final String COLA_CODE = "A1";
 	public static final String CHIPS_CODE = "A2";
 	public static final String CANDY_CODE = "A3";

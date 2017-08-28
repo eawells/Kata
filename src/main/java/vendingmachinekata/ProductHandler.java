@@ -7,9 +7,9 @@ public class ProductHandler {
 	private int colaStock;
 	
 	public ProductHandler(){
-		candyStock = 10;
-		chipsStock = 10; 
-		colaStock = 10;
+		candyStock = VendingMachineLiterals.CANDY_MAX_STOCK;
+		chipsStock = VendingMachineLiterals.CHIPS_MAX_STOCK; 
+		colaStock = VendingMachineLiterals.COLA_MAX_STOCK;
 	}
 
 	public int getStock(Product item) {
