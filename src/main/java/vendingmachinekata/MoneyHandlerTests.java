@@ -238,4 +238,14 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		assertEquals(true, mh.changeCanBeMade());
 	}
+	
+	@Test
+	public void whenANickelADimeAPennyAndAQuarterAreInsertedTheMoneyAvailableIs40(){
+		mh.insertCoin(Coin.NICKEL);
+		mh.insertCoin(Coin.DIME);
+		mh.insertCoin(Coin.PENNY);
+		mh.insertCoin(Coin.QUARTER);
+		assertEquals(40,mh.getMoneyAvailable());
+	}
+
 }

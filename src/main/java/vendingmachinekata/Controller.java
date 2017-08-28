@@ -10,7 +10,7 @@ public class Controller {
 		this.moneyHandler = moneyHandler;
 		this.display = display;
 		this.productHandler = productHandler;
-		display.updateDisplay(getMoneyAvailable(),moneyHandler.changeCanBeMade());
+		display.updateDisplay(moneyHandler.getMoneyAvailable(),moneyHandler.changeCanBeMade());
 	}
 	
 	public void insertCoin(Coin coin) {
@@ -21,13 +21,9 @@ public class Controller {
 
 	public String getDisplay() {
 		String newDisplay = display.getDisplay();
-		display.updateDisplay(getMoneyAvailable(), moneyHandler.changeCanBeMade());
+		display.updateDisplay(moneyHandler.getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return newDisplay;
 		 	
-	}
-	
-	public int getMoneyAvailable() {
-		return	moneyHandler.getMoneyAvailable();
 	}
 	
 	public boolean selectItem(Product item) {
@@ -39,7 +35,7 @@ public class Controller {
 	
 	public boolean returnCoins() {
 		boolean isReturned = moneyHandler.returnCoins();
-		display.updateDisplay(getMoneyAvailable(), moneyHandler.changeCanBeMade());
+		display.updateDisplay(moneyHandler.getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return isReturned;
 	}
 	

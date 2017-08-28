@@ -66,15 +66,6 @@ public class ControllerTests {
 	}
 	
 	@Test
-	public void whenANickelADimeAPennyAndAQuarterAreInsertedTheMoneyAvailableIs40(){
-		control.insertCoin(Coin.NICKEL);
-		control.insertCoin(Coin.DIME);
-		control.insertCoin(Coin.PENNY);
-		control.insertCoin(Coin.QUARTER);
-		assertEquals(40,control.getMoneyAvailable());
-	}
-	
-	@Test
 	public void whenAColaIsPurchasedWithADollarDisplaySaysTHANKYOU(){
 		control.insertCoin(Coin.QUARTER);
 		control.insertCoin(Coin.QUARTER);
@@ -180,13 +171,6 @@ public class ControllerTests {
 		control.insertCoin(Coin.DIME);
 		control.returnCoins();
 		assertEquals("EXACT CHANGE ONLY",control.getDisplay());
-	}
-	
-	@Test 
-	public void whenReturnCoinsIsPressedMoneyAvailableIs0(){ 
-		control.insertCoin(Coin.DIME); 
-		control.returnCoins(); 
-		assertEquals(0, control.getMoneyAvailable()); 
 	}
 	
 	@Test 
