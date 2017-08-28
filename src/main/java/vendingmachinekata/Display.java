@@ -61,4 +61,18 @@ public class Display {
 			}
 		}
 
+		public void selectItem(Product item, int stock, int moneyAvailable) {
+			if(stock != 0){
+				if(moneyAvailable >= item.cost()){
+					changeDisplayto("THANK YOU");
+				}
+				else{
+					changeDisplayto("PRICE: " + item.cost() );
+				}	
+			}
+			else{
+				changeDisplayto("SOLD OUT");
+			}	
+		}
+
 }

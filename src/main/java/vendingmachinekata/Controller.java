@@ -31,23 +31,13 @@ public class Controller {
 	}
 	
 	public boolean selectItem(Product item) {
-		
-		if(productHandler.getStock(item) != 0){
-			if(getMoneyAvailable() >= item.cost()){
-				productHandler.purchase(item);
-				moneyHandler.selectItem(item);
-				display.changeDisplayto("THANK YOU");
-				return true;
-			}
-			else{
-				display.changeDisplayto("PRICE: " + item.cost() );
-				return false;
-			}	
+		display.selectItem(item,productHandler.getStock(item),getMoneyAvailable());
+		if(productHandler.getStock(item) != 0 && getMoneyAvailable() >= item.cost()){
+			productHandler.purchase(item);
+			moneyHandler.selectItem(item);
+			return true;
 		}
-		else{
-			display.changeDisplayto("SOLD OUT");
-			return false;
-		}		
+		return false;		
 	}
 
 	public boolean returnCoins() {
