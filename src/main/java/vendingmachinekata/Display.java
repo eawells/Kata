@@ -13,7 +13,7 @@ public class Display {
 		return display;
 	}
 
-	public void changeDisplayto(String s){
+	private void changeDisplayto(String s){
 		display = s;
 	}
 
