@@ -11,7 +11,10 @@ public class ControllerTests {
 	
 	@Before
 	public void setUp(){
-		control = new Controller();
+		MoneyHandler mh = new MoneyHandler();
+		Display d = new Display();
+		ProductHandler ph = new ProductHandler();
+		control = new Controller(mh,d,ph);
 	}
 	
 	@Test

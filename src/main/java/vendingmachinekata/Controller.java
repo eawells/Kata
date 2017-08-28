@@ -6,10 +6,10 @@ public class Controller {
 	private Display display;
 	private ProductHandler productHandler;
 	
-	public Controller(){
-		moneyHandler = new MoneyHandler();
-		display = new Display();
-		productHandler = new ProductHandler();
+	public Controller(MoneyHandler moneyHandler,Display display,ProductHandler productHandler){
+		this.moneyHandler = moneyHandler;
+		this.display = display;
+		this.productHandler = productHandler;
 		updateDisplay();
 	}
 	

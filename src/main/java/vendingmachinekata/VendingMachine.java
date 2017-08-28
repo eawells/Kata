@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class VendingMachine {
 	
 	public static void main(String[] args) {
-		Controller controller = new Controller();
+		MoneyHandler mh = new MoneyHandler();
+		Display d = new Display();
+		ProductHandler ph = new ProductHandler();
+		Controller controller = new Controller(mh,d,ph);
 		System.out.println("\nVENDING MACHINE\n");
 		System.out.println("DISPLAY: " + controller.getDisplay());
 		displayOptions();
