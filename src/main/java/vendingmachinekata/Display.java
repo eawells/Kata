@@ -48,4 +48,17 @@ public class Display {
 				return false;
 			}
 		}
+		
+		public void updateDisplay(int moneyAvailable,boolean canChangeBeMade){
+			if(moneyAvailable > 0){
+				changeDisplayto(moneyAvailable+"");
+			}
+			else if(!canChangeBeMade){
+				changeDisplayto("EXACT CHANGE ONLY");
+			}
+			else{
+				changeDisplayto("INSERT COIN");
+			}
+		}
+
 }

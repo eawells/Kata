@@ -10,7 +10,7 @@ public class Controller {
 		this.moneyHandler = moneyHandler;
 		this.display = display;
 		this.productHandler = productHandler;
-		updateDisplay();
+		display.updateDisplay(getMoneyAvailable(),moneyHandler.changeCanBeMade());
 	}
 	
 	public void insertCoin(Coin coin) {
@@ -21,7 +21,7 @@ public class Controller {
 
 	public String getDisplay() {
 		String newDisplay = display.getDisplay();
-		updateDisplay();
+		display.updateDisplay(getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return newDisplay;
 		 	
 	}
@@ -31,7 +31,7 @@ public class Controller {
 	}
 	
 	public boolean selectItem(Product item) {
-		//check if in stock to purchase, display SOLD OUT if out of stock
+		
 		if(productHandler.getStock(item) != 0){
 			if(getMoneyAvailable() >= item.cost()){
 				productHandler.purchase(item);
@@ -52,7 +52,7 @@ public class Controller {
 
 	public boolean returnCoins() {
 		boolean isReturned = moneyHandler.returnCoins();
-		updateDisplay();
+		display.updateDisplay(getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return isReturned;
 	}
 	
@@ -60,15 +60,5 @@ public class Controller {
 		return "Coins dispensed to coin return: " + moneyHandler.dispenseCoinstoCoinReturn();
 	}
 	
-	private void updateDisplay(){
-		if(getMoneyAvailable() > 0){
-			display.changeDisplayto(getMoneyAvailable()+"");
-		}
-		else if(!moneyHandler.changeCanBeMade()){
-			display.changeDisplayto("EXACT CHANGE ONLY");
-		}
-		else{
-			display.changeDisplayto("INSERT COIN");
-		}
-	}
+
 }
