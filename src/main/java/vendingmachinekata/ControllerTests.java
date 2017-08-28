@@ -175,13 +175,16 @@ public class ControllerTests {
 	
 	@Test 
 	public void whenAnItemIsOutOfStockDisplaySaysSoldOut(){
-		//Try to buy 11 bags of chips
+		tryToBuy11BagsOfChips();
+		assertEquals("SOLD OUT", control.getDisplay());
+	}
+	
+	private void tryToBuy11BagsOfChips(){
 		for(int i = 0; i < 11; i++){
 			control.insertCoin(Coin.QUARTER);
 			control.insertCoin(Coin.QUARTER);
 			control.selectItem(Product.CHIPS);
 		}
-		assertEquals("SOLD OUT", control.getDisplay());
 	}
 	
 	@Test 
