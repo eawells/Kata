@@ -1,12 +1,9 @@
-package test.java;
+package main.java.vendingmachinekata;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import main.java.vendingmachinekata.Product;
-import main.java.vendingmachinekata.ProductHandler;
 
 public class ProductHandlerTests {
 	

@@ -1,10 +1,8 @@
-package test.java;
+package main.java.vendingmachinekata;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import main.java.vendingmachinekata.Display;
 
 public class DisplayTests {
 	

@@ -1,14 +1,9 @@
-package test.java;
+package main.java.vendingmachinekata;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import main.java.vendingmachinekata.Coin;
-import main.java.vendingmachinekata.MoneyHandler;
-import main.java.vendingmachinekata.Product;
-import main.java.vendingmachinekata.VendingMachineLiterals;
 
 public class MoneyHandlerTests {
 		
