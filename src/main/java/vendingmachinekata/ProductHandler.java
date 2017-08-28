@@ -25,17 +25,20 @@ public class ProductHandler {
 		return 0;		 
 	}
 
-	public void purchase(Product item) {
-		if(item.code().equals(Product.CANDY.code())){
-			candyStock -= 1;
+	public boolean purchase(Product item, int moneyAvailable) {
+		if(getStock(item) > 0 && moneyAvailable >= item.cost()){
+			if(item.code().equals(Product.CANDY.code())){
+				candyStock -= 1;
+			}
+			else if(item.code().equals(Product.CHIPS.code())){
+				chipsStock -= 1; 
+			}
+			else if(item.code().equals(Product.COLA.code())){
+				colaStock -= 1; 
+			}
+			return true;
 		}
-		else if(item.code().equals(Product.CHIPS.code())){
-			chipsStock -= 1; 
-		}
-		else if(item.code().equals(Product.COLA.code())){
-			colaStock -= 1; 
-		}
-		
+		return false;
 	}
 
 }

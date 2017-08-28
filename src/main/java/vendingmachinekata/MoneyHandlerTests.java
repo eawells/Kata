@@ -47,7 +47,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.COLA);
+		mh.selectItem(Product.COLA,10);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
@@ -57,7 +57,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CANDY);
+		mh.selectItem(Product.CANDY,10);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
@@ -67,7 +67,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals(0,mh.getMoneyAvailable());
 	}	
 	
@@ -76,7 +76,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals(25,mh.getCoinReturnValue());
 	}
 	
@@ -85,7 +85,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals("1 quarter(s). ",mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -94,7 +94,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.DIME);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals("1 dime(s). ",mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -103,7 +103,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.NICKEL);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals("1 nickel(s). ",mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -112,7 +112,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.PENNY);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals("1 penny(s). ",mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -126,7 +126,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.NICKEL);
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.PENNY);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		assertEquals("1 quarter(s). 1 dime(s). 1 nickel(s). 1 penny(s). ",mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -197,7 +197,7 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
-		mh.selectItem(Product.CHIPS);
+		mh.selectItem(Product.CHIPS,10);
 		mh.dispenseCoinstoCoinReturn();
 		assertEquals(2, mh.getCoinsInMachine()[0]);
 	}

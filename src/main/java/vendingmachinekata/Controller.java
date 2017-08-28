@@ -31,15 +31,12 @@ public class Controller {
 	}
 	
 	public boolean selectItem(Product item) {
-		display.selectItem(item,productHandler.getStock(item),getMoneyAvailable());
-		if(productHandler.getStock(item) != 0 && getMoneyAvailable() >= item.cost()){
-			productHandler.purchase(item);
-			moneyHandler.selectItem(item);
-			return true;
-		}
-		return false;		
+		int stock = productHandler.getStock(item);
+		int moneyAvailable = moneyHandler.getMoneyAvailable();
+		display.selectItem(item,stock,moneyAvailable);
+		return productHandler.purchase(item,moneyAvailable) && moneyHandler.selectItem(item, stock);
 	}
-
+	
 	public boolean returnCoins() {
 		boolean isReturned = moneyHandler.returnCoins();
 		display.updateDisplay(getMoneyAvailable(), moneyHandler.changeCanBeMade());

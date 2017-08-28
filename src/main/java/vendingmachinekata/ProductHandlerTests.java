@@ -22,7 +22,7 @@ public class ProductHandlerTests {
 
 	@Test
 	public void whenOneCandyHasBeenPurchasedThereAre9Left(){
-		productHandler.purchase(Product.CANDY);
+		productHandler.purchase(Product.CANDY,500);
 		assertEquals(9, productHandler.getStock(Product.CANDY));
 	}
 	
@@ -33,8 +33,8 @@ public class ProductHandlerTests {
 	
 	@Test 
 	public void whenOneBagOfChipsHasBeenPurchasedThereAre9Left(){ 
-		productHandler.purchase(Product.CHIPS); 
-		productHandler.purchase(Product.CANDY); 
+		productHandler.purchase(Product.CHIPS,500); 
+		productHandler.purchase(Product.CANDY,500); 
 		assertEquals(9, productHandler.getStock(Product.CHIPS)); 
 	}
 	
@@ -45,7 +45,7 @@ public class ProductHandlerTests {
 	
 	@Test
 	public void whenOneColaHasBeenPurchasedThereAre9Left(){
-		productHandler.purchase(Product.COLA);
+		productHandler.purchase(Product.COLA,500);
 		assertEquals(9, productHandler.getStock(Product.COLA));
 	}
 

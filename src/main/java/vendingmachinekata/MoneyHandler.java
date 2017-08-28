@@ -42,11 +42,13 @@ public class MoneyHandler {
 		return moneyAvailable;
 	}
 
-	public void selectItem(Product item) {
-		if(moneyAvailable >= item.cost()){
+	public boolean selectItem(Product item, int stock) {
+		if(stock>0 && moneyAvailable >= item.cost()){
 			coinReturnValue += moneyAvailable - item.cost();
 			moneyAvailable = 0;
+			return true;
 		}
+		return false;
 	}
 
 	//gives a string of the coins in coin return
