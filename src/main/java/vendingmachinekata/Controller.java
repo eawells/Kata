@@ -15,38 +15,9 @@ public class Controller {
 	
 	public void insertCoin(Coin coin) {
 		moneyHandler.insertCoin(coin);
-		if(coin.mass() == VendingMachineLiterals.DIME_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.DIME_DIAMETER_MM){
-			addMoneytoDisplay(10);
-		}	
-		else if(coin.mass() == VendingMachineLiterals.NICKEL_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.NICKEL_DIAMETER_MM){
-			addMoneytoDisplay(5);
-		}
-		else if(coin.mass() == VendingMachineLiterals.QUARTER_MASS_GRAMS && coin.diameter() == VendingMachineLiterals.QUARTER_DIAMETER_MM){
-			addMoneytoDisplay(25);
-		}
-			
+		display.addCoinToDisplay(coin);			
 	}
 	
-	private void addMoneytoDisplay(int amount){
-		if(isDigit(display.getDisplay())){
-			int money = Integer.parseInt(display.getDisplay()) + amount;
-			display.changeDisplayto(Integer.toString(money));
-		}
-		else{
-			display.changeDisplayto(amount+"");
-
-		}
-	}
-	
-	private boolean isDigit(String s){
-		try{
-			Integer.parseInt(s);
-			return true;
-		}
-		catch(NumberFormatException e){
-			return false;
-		}
-	}
 
 	public String getDisplay() {
 		String newDisplay = display.getDisplay();
