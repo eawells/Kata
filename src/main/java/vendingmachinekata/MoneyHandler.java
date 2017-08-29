@@ -107,8 +107,7 @@ public class MoneyHandler {
 		return change.toString();
 	}
 	
-	//when someone presses coin return
-	public boolean returnCoins() {
+	public boolean pressReturnCoins() {
 		if(moneyAvailable == 0){
 			return false;
 		}
@@ -117,8 +116,6 @@ public class MoneyHandler {
 			moneyAvailable = 0;
 			return true;
 		}
-		
-		
 	}
 
 	public int[] getCoinsInMachine() {

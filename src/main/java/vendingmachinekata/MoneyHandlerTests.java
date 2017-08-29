@@ -133,21 +133,21 @@ public class MoneyHandlerTests {
 	@Test
 	public void whenReturnCoinsIsPressedMoneyAvailableIs0(){
 		mh.insertCoin(Coin.DIME);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		assertEquals(0, mh.getMoneyAvailable());
 	}
 	
 	@Test
 	public void whenReturnCoinsIsPressedWithADimeCoinReturnValueIs10(){
 		mh.insertCoin(Coin.DIME);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		assertEquals(10, mh.getCoinReturnValue());
 	}
 	
 	@Test
 	public void whenReturnCoinsIsPressedWith25CentsThereIsAQuarterInCoinReturn(){
 		mh.insertCoin(Coin.QUARTER);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		assertEquals("1 quarter(s). ", mh.dispenseCoinstoCoinReturn());
 	}
 	
@@ -187,7 +187,7 @@ public class MoneyHandlerTests {
 	@Test
 	public void whenAQuarterGoesToTheCoinReturnItIsNoLongerInMachine(){
 		mh.insertCoin(Coin.QUARTER);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		mh.dispenseCoinstoCoinReturn();
 		assertEquals(0, mh.getCoinsInMachine()[0]);
 	}
@@ -205,7 +205,7 @@ public class MoneyHandlerTests {
 	@Test 
 	public void whenADimeGoesToTheCoinReturnItIsNoLongerInMachine(){
 		mh.insertCoin(Coin.DIME);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		mh.dispenseCoinstoCoinReturn();
 		assertEquals(0, mh.getCoinsInMachine()[1]);
 	}
@@ -213,7 +213,7 @@ public class MoneyHandlerTests {
 	@Test 
 	public void whenANickelGoesToTheCoinReturnItIsNoLongerInMachine(){
 		mh.insertCoin(Coin.NICKEL);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		mh.dispenseCoinstoCoinReturn();
 		assertEquals(0, mh.getCoinsInMachine()[2]);
 	}
@@ -222,7 +222,7 @@ public class MoneyHandlerTests {
 	public void whenOnlyNickelsAreAvailableMachineOnlyGivesNickels(){
 		mh.insertCoin(Coin.NICKEL);
 		mh.insertCoin(Coin.NICKEL);
-		mh.returnCoins();
+		mh.pressReturnCoins();
 		assertEquals("2 nickel(s). ", mh.dispenseCoinstoCoinReturn());
 	}
 	

@@ -34,7 +34,7 @@ public class Controller {
 	}
 	
 	public boolean returnCoins() {
-		boolean isReturned = moneyHandler.returnCoins();
+		boolean isReturned = moneyHandler.pressReturnCoins();
 		display.updateDisplay(moneyHandler.getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return isReturned;
 	}
