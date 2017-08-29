@@ -123,20 +123,21 @@ public class MoneyHandler {
 	}
 
 	public boolean changeCanBeMade() {
-		/*for any product price that can be purchased with quarters, dimes, nickels,
-		the greatest amount of change needed would be quarter value - nickel value. However, 
-		if one of the products is not divisible by 10, then a nickel would also be needed
-		*/
+		if(coinsInMachineQuartersDimesNickelsPennies[2] ==0 && nickelNeeded()){
+			return false;
+		}
+		int valueOfDimesAndNickelsInMachine = coinsInMachineQuartersDimesNickelsPennies[1]*10 + coinsInMachineQuartersDimesNickelsPennies[2]*5;
+		if(valueOfDimesAndNickelsInMachine >= VendingMachineLiterals.QUARTER_VALUE_CENTS- VendingMachineLiterals.NICKEL_VALUE_CENTS){
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean nickelNeeded(){
 		for(int i =0; i <productCostsColaChipsCandy.length; i++){
 			if(productCostsColaChipsCandy[i]%10 != 0){
-				if(coinsInMachineQuartersDimesNickelsPennies[2] ==0){
-					return false;
-				}
+				return true;
 			}
-		}
-		int amountInMachine = coinsInMachineQuartersDimesNickelsPennies[1]*10 + coinsInMachineQuartersDimesNickelsPennies[2]*5;
-		if(amountInMachine >= VendingMachineLiterals.QUARTER_VALUE_CENTS- VendingMachineLiterals.NICKEL_VALUE_CENTS){
-			return true;
 		}
 		return false;
 	}
