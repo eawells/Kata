@@ -86,7 +86,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.QUARTER);
 		mh.selectItem(Product.CHIPS,10);
-		assertEquals("1 quarter(s). ",mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(1,coins[0]);
 	}
 	
 	@Test
@@ -95,7 +96,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.DIME);
 		mh.selectItem(Product.CHIPS,10);
-		assertEquals("1 dime(s). ",mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(1,coins[1]);
 	}
 	
 	@Test
@@ -104,7 +106,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.NICKEL);
 		mh.selectItem(Product.CHIPS,10);
-		assertEquals("1 nickel(s). ",mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(1,coins[2]);
 	}
 	
 	@Test
@@ -113,7 +116,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.QUARTER);
 		mh.insertCoin(Coin.PENNY);
 		mh.selectItem(Product.CHIPS,10);
-		assertEquals("1 penny(s). ",mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(1,coins[3]);
 	}
 	
 	@Test
@@ -127,7 +131,12 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.DIME);
 		mh.insertCoin(Coin.PENNY);
 		mh.selectItem(Product.CHIPS,10);
-		assertEquals("1 quarter(s). 1 dime(s). 1 nickel(s). 1 penny(s). ",mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		int quarter =coins[0]; 
+		int dime = coins[1]; 
+		int nickel = coins[2]; 
+		int penny = coins[3]; 
+		assertEquals("1q.1d.1n.1p.",quarter+"q."+dime+"d."+nickel+"n."+penny+"p.");
 	}
 	
 	@Test
@@ -148,7 +157,8 @@ public class MoneyHandlerTests {
 	public void whenReturnCoinsIsPressedWith25CentsThereIsAQuarterInCoinReturn(){
 		mh.insertCoin(Coin.QUARTER);
 		mh.pressReturnCoins();
-		assertEquals("1 quarter(s). ", mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(1, coins[0]);
 	}
 	
 	@Test
@@ -223,7 +233,8 @@ public class MoneyHandlerTests {
 		mh.insertCoin(Coin.NICKEL);
 		mh.insertCoin(Coin.NICKEL);
 		mh.pressReturnCoins();
-		assertEquals("2 nickel(s). ", mh.dispenseCoinstoCoinReturn());
+		int[] coins = mh.dispenseCoinstoCoinReturn();
+		assertEquals(2, coins[2]);
 	}
 	
 	@Test

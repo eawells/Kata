@@ -51,60 +51,46 @@ public class MoneyHandler {
 		return false;
 	}
 
-	//gives a string of the coins in coin return
-	public String dispenseCoinstoCoinReturn() {
-		if(coinReturnValue ==0){
-			return "None";
-		}
-		String change = makeChange(coinReturnValue);
+	public int[] dispenseCoinstoCoinReturn() {
+		int[] change = calculateChange(coinReturnValue);
 		coinReturnValue = 0;
+		for(int i = 0;i<coinsInMachineQuartersDimesNickelsPennies.length;i++){
+			coinsInMachineQuartersDimesNickelsPennies[i] -= change[i];
+		}
 		return change;
 	}
 	
-	private String makeChange(int amount){
-		StringBuffer change = new StringBuffer();
-		int countQuarters = 0;
-		int countDimes = 0;
-		int countNickels = 0;
-		int countPennies = 0;
+	private int[] calculateChange(int amount){
+		int[] quartersDimesNickelsPennies = new int[4];
 		if(amount >= 25){
-			countQuarters = amount/25;
-			//take the minimum between the quarters that need to be given and the number of quarters there are
-			countQuarters = Math.min(countQuarters, coinsInMachineQuartersDimesNickelsPennies[0]);
-			if(countQuarters != 0){
-				amount = amount-(countQuarters*25);
-				change.append(countQuarters + " quarter(s). ");
-				coinsInMachineQuartersDimesNickelsPennies[0] -= countQuarters;
+			quartersDimesNickelsPennies[0] = amount/25;
+			quartersDimesNickelsPennies[0] = Math.min(quartersDimesNickelsPennies[0], coinsInMachineQuartersDimesNickelsPennies[0]);
+			if(quartersDimesNickelsPennies[0] != 0){
+				amount = amount-(quartersDimesNickelsPennies[0]*25);
 				}
 			}
 		if(amount >= 10){
-			countDimes = amount/10;
-			countDimes = Math.min(countDimes, coinsInMachineQuartersDimesNickelsPennies[1]);
-			if(countDimes != 0){
-				amount = amount-(countDimes*10);
-		        change.append(countDimes + " dime(s). ");
-		        coinsInMachineQuartersDimesNickelsPennies[1] -= countDimes;
+			quartersDimesNickelsPennies[1] = amount/10;
+			quartersDimesNickelsPennies[1] = Math.min(quartersDimesNickelsPennies[1], coinsInMachineQuartersDimesNickelsPennies[1]);
+			if(quartersDimesNickelsPennies[1] != 0){
+				amount = amount-(quartersDimesNickelsPennies[1]*10);
 				}
 	        }
 		if(amount >= 5){
-	        countNickels = amount/5;
-	        countNickels = Math.min(countNickels, coinsInMachineQuartersDimesNickelsPennies[2]);
-	        if(countNickels != 0){
-		        amount = amount-(countNickels*5);
-		        change.append(countNickels + " nickel(s). ");
-		        coinsInMachineQuartersDimesNickelsPennies[2] -= countNickels;
+	        quartersDimesNickelsPennies[2] = amount/5;
+	        quartersDimesNickelsPennies[2] = Math.min(quartersDimesNickelsPennies[2], coinsInMachineQuartersDimesNickelsPennies[2]);
+	        if(quartersDimesNickelsPennies[2] != 0){
+		        amount = amount-(quartersDimesNickelsPennies[2]*5);
 	        	}
 	        }
 		if(amount >= 1){
-			countPennies = amount/1;
-			countPennies = Math.min(countPennies, coinsInMachineQuartersDimesNickelsPennies[3]);
-			if(countPennies != 0){
-				amount = amount-(countPennies*5);
-				change.append(countPennies + " penny(s). ");
-				coinsInMachineQuartersDimesNickelsPennies[3] -= countPennies;
-			}
+			quartersDimesNickelsPennies[3] = amount/1;
+			quartersDimesNickelsPennies[3] = Math.min(quartersDimesNickelsPennies[3], coinsInMachineQuartersDimesNickelsPennies[3]);
+			if(quartersDimesNickelsPennies[3] != 0){
+				amount = amount-(quartersDimesNickelsPennies[3]*5);
+				}
 	        }
-		return change.toString();
+		return quartersDimesNickelsPennies;
 	}
 	
 	public boolean pressReturnCoins() {
