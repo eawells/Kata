@@ -1,15 +1,15 @@
 package main.java.vendingmachinekata;
 
-import java.util.Scanner;
+import static org.junit.Assert.assertEquals;
 
-public class VendingMachine {
+import org.junit.Test;
+
+public class TestsForMain {
 	
-	public static void main(String[] args) {
-
-	}
-
-	String displayOptions() {
-		return "\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST_CENTS 
+	@Test
+	public void displayOptionsReturnsOptions(){
+		VendingMachine vm = new VendingMachine();
+		assertEquals("\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST_CENTS 
 				+ " CENTS\n" +VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST_CENTS + " CENTS\n"
 				+VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST_CENTS + " CENTS\n"
 				+"\nKeys:\n" + VendingMachineLiterals.EXIT + " is exit.\n"
@@ -20,7 +20,7 @@ public class VendingMachine {
 				+ "("+ VendingMachineLiterals.COLA_CODE + ") would select cola for purchase. Only one item can be purchased at a time.\n"
 				+VendingMachineLiterals.DISPLAY_REFRESH +" is refresh display.\n"
 				+VendingMachineLiterals.HELP +" is help (display all options again).\n"
-				+"This machine only accepts quarters, nickels, and dimes.";
+				+"This machine only accepts quarters, nickels, and dimes.", vm.displayOptions());
 	}
 
 }
