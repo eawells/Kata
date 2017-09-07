@@ -9,9 +9,11 @@ public class VendingMachine {
 	}
 
 	String displayOptions() {
-		return "\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST_CENTS 
-				+ " CENTS\n" +VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST_CENTS + " CENTS\n"
-				+VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST_CENTS + " CENTS\n"
+		StringBuilder options = new StringBuilder("\nPRODUCT OPTIONS:\n");
+		for(Product product : Product.values()){
+			options.append(product.code() +" "+ product.toString() +" "+ product.cost() +" CENTS\n");
+		}
+		return options
 				+"\nKeys:\n" + VendingMachineLiterals.EXIT + " is exit.\n"
 				+VendingMachineLiterals.INSERT_COIN +"(coins) is insert coin. For example, " + VendingMachineLiterals.INSERT_COIN 
 				+ "(Q D N P) would insert a quarter, a dime, a nickel, and a penny.\n"
