@@ -4,8 +4,17 @@ import java.util.Scanner;
 
 public class VendingMachine {
 	
+	Controller controller;
+	
+	public VendingMachine(){
+		MoneyHandler mh = new MoneyHandler();
+		Display d = new Display();
+		ProductHandler ph = new ProductHandler();
+		controller = new Controller(mh,d,ph);
+	}
+	
 	public static void main(String[] args) {
-
+		
 	}
 
 	String displayOptions() {
@@ -25,4 +34,7 @@ public class VendingMachine {
 				+"This machine only accepts quarters, nickels, and dimes.";
 	}
 
+	public void insertCoin(String coins) {
+		controller.insertCoin(Coin.QUARTER);
+	}
 }

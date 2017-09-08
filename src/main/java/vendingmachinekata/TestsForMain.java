@@ -2,13 +2,19 @@ package main.java.vendingmachinekata;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestsForMain {
 	
+	VendingMachine vm;
+	
+	@Before
+	public void setUp(){
+		vm = new VendingMachine();
+	}
 	@Test
 	public void displayOptionsReturnsOptions(){
-		VendingMachine vm = new VendingMachine();
 		assertEquals("\nPRODUCT OPTIONS:\n" + VendingMachineLiterals.COLA_CODE + " COLA " + VendingMachineLiterals.COLA_COST_CENTS 
 				+ " CENTS\n" +VendingMachineLiterals.CHIPS_CODE + " CHIPS " + VendingMachineLiterals.CHIPS_COST_CENTS + " CENTS\n"
 				+VendingMachineLiterals.CANDY_CODE + " CANDY " + VendingMachineLiterals.CANDY_COST_CENTS + " CENTS\n"
@@ -21,6 +27,12 @@ public class TestsForMain {
 				+VendingMachineLiterals.DISPLAY_REFRESH +" is refresh display.\n"
 				+VendingMachineLiterals.HELP +" is help (display all options again).\n"
 				+"This machine only accepts quarters, nickels, and dimes.", vm.displayOptions());
+	}
+	
+	@Test
+	public void insertQuarterChangesDisplayTo25(){
+		vm.insertCoin("(Q)");
+		assertEquals("25", vm.controller.getDisplay());
 	}
 
 }
