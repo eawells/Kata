@@ -35,6 +35,11 @@ public class VendingMachine {
 	}
 
 	public void insertCoin(String coins) {
-		controller.insertCoin(Coin.QUARTER);
+		if(coins.charAt(1) ==  'Q'){
+			controller.insertCoin(Coin.QUARTER);
+		}
+		else if(coins.charAt(1) ==  'D'){
+			controller.insertCoin(Coin.DIME);
+		}	
 	}
 }
