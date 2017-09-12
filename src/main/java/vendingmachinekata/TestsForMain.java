@@ -31,25 +31,25 @@ public class TestsForMain {
 	
 	@Test
 	public void insertQuarterChangesDisplayTo25(){
-		vm.insertCoin("(Q)");
+		vm.insertCoin('Q');
 		assertEquals("25", vm.controller.getDisplay());
 	}
 	
 	@Test
 	public void insertDimeChangesDisplayTo10(){
-		vm.insertCoin("(D)");
+		vm.insertCoin('D');
 		assertEquals("10", vm.controller.getDisplay());
 	}
 	
 	@Test
 	public void insertNickelChangesDisplayTo5(){
-		vm.insertCoin("(N)");
+		vm.insertCoin('N');
 		assertEquals("5",vm.controller.getDisplay());
 	}
 	
 	@Test 
 	public void insertPennyChangesMoneyInCoinReturn(){
-		vm.insertCoin("(P)");
+		vm.insertCoin('P');
 		assertEquals(1,vm.mh.getCoinReturnValue());
 	}
 }
