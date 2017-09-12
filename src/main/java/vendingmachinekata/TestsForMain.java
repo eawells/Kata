@@ -46,4 +46,10 @@ public class TestsForMain {
 		vm.insertCoin("(N)");
 		assertEquals("5",vm.controller.getDisplay());
 	}
+	
+	@Test 
+	public void insertPennyChangesMoneyInCoinReturn(){
+		vm.insertCoin("(P)");
+		assertEquals(1,vm.mh.getCoinReturnValue());
+	}
 }

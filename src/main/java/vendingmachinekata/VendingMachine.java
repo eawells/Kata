@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class VendingMachine {
 	
 	Controller controller;
+	MoneyHandler mh;
 	
 	public VendingMachine(){
-		MoneyHandler mh = new MoneyHandler();
+		mh = new MoneyHandler();
 		Display d = new Display();
 		ProductHandler ph = new ProductHandler();
 		controller = new Controller(mh,d,ph);
@@ -43,6 +44,9 @@ public class VendingMachine {
 		}
 		else if(coins.charAt(1) == 'N'){
 			controller.insertCoin(Coin.NICKEL);
+		}
+		else if(coins.charAt(1)=='P'){
+			controller.insertCoin(Coin.PENNY);
 		}
 	}
 }
