@@ -40,6 +40,9 @@ public class VendingMachine {
 		}
 		else if(coins.charAt(1) ==  'D'){
 			controller.insertCoin(Coin.DIME);
-		}	
+		}
+		else if(coins.charAt(1) == 'N'){
+			controller.insertCoin(Coin.NICKEL);
+		}
 	}
 }

@@ -36,9 +36,14 @@ public class TestsForMain {
 	}
 	
 	@Test
-	public void insertDimeChangesDisplayTo25(){
+	public void insertDimeChangesDisplayTo10(){
 		vm.insertCoin("(D)");
 		assertEquals("10", vm.controller.getDisplay());
 	}
-
+	
+	@Test
+	public void insertNickelChangesDisplayTo5(){
+		vm.insertCoin("(N)");
+		assertEquals("5",vm.controller.getDisplay());
+	}
 }
