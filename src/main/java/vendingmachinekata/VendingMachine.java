@@ -42,4 +42,13 @@ public class VendingMachine {
 			}
 		}
 	}
+
+	public void selectProduct(String code) {
+		for(Product product: Product.values()){
+			if(code.equals(product.code())){
+				controller.selectItem(product);
+			}
+		}
+	}
+	
 }

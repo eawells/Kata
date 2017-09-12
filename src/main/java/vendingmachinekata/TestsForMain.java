@@ -52,4 +52,10 @@ public class TestsForMain {
 		vm.insertCoin('P');
 		assertEquals(1,vm.mh.getCoinReturnValue());
 	}
+	
+	@Test
+	public void whenAProductIsPurchasedThePriceIsDisplayed(){
+		vm.selectProduct("A1");
+		assertEquals("PRICE: 100", vm.controller.getDisplay());
+	}
 }
