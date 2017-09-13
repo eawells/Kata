@@ -63,4 +63,9 @@ public class TestsForMain {
 	public void whenNoParenthesisAreUsedForSelectionOrInsertionOptionsInvaildFormatIsTrue(){
 		assertEquals(true,vm.invalidFormat("A1"));
 	}
+	
+	@Test
+	public void whenFormattedCorrectlyInvalidFormatIsFalse(){
+		assertEquals(false,vm.invalidFormat("(A1)"));
+	}
 }

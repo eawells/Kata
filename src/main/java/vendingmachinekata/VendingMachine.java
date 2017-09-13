@@ -52,6 +52,11 @@ public class VendingMachine {
 	}
 
 	public boolean invalidFormat(String input) {
+		int startingParenthesis = input.indexOf('(');
+		int endingParenthesis = input.indexOf(')');
+		if(startingParenthesis >= 0 && endingParenthesis >= 0 && endingParenthesis > startingParenthesis){
+			return false;
+		}
 		return true;
 	}
 	
