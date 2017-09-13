@@ -59,5 +59,9 @@ public class VendingMachine {
 		}
 		return true;
 	}
+
+	public String displayInvalidFormat() {
+		return "Invaid key format. Please try again.";
+	}
 	
 }

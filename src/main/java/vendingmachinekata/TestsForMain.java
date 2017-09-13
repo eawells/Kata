@@ -73,4 +73,9 @@ public class TestsForMain {
 	public void whenThereAreCharsOutsideParenthesisInvaildFormatIsTrue(){
 		assertEquals(true,vm.invalidFormat("(A1)A"));
 	}
+	
+	@Test
+	public void whenDisplayInvalidFormatMethodCalledItDisplaysInvaidFormat(){
+		assertEquals("Invaid key format. Please try again.", vm.displayInvalidFormat());
+	}
 }
