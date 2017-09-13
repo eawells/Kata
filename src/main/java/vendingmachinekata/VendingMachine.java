@@ -65,5 +65,11 @@ public class VendingMachine {
 	public String displayInvalidFormat() {
 		return "Invaid key format. Please try again.";
 	}
+
+	public void insertManyCoins(String coins) {
+		for(int i = 1; i <coins.length()-1;i++){
+			insertCoin(coins.charAt(i));
+		}
+	}
 	
 }

@@ -88,4 +88,10 @@ public class TestsForMain {
 	public void whenValidCoinInsertedInsertCoinIsTrue(){
 		assertEquals(true,vm.insertCoin('P'));
 	}
+	
+	@Test
+	public void whenInsertingManyCoinsDisplayUpdatedCorrectly(){
+		vm.insertManyCoins("(Q D N P)");
+		assertEquals("40", vm.controller.getDisplay());
+	}
 }
