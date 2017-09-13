@@ -35,12 +35,13 @@ public class VendingMachine {
 				+"This machine only accepts quarters, nickels, and dimes.";
 	}
 
-	public void insertCoin(char coinChar){
+	public boolean insertCoin(char coinChar){
 		for(Coin coin: Coin.values()){
 			if(coinChar == coin.toString().charAt(0)){
 				controller.insertCoin(coin);
 			}
 		}
+		return false;
 	}
 
 	public void selectProduct(String code) {

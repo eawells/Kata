@@ -78,4 +78,9 @@ public class TestsForMain {
 	public void whenDisplayInvalidFormatMethodCalledItDisplaysInvaidFormat(){
 		assertEquals("Invaid key format. Please try again.", vm.displayInvalidFormat());
 	}
+	
+	@Test 
+	public void whenInvalidCoinInsertedInsertCoinIsFalse(){
+		assertEquals(false,vm.insertCoin('C'));
+	}
 }
