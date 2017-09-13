@@ -99,4 +99,9 @@ public class TestsForMain {
 	public void whenOneCoinIsInvalidInsertManyCoinsReturnsFalse(){
 		assertEquals(false, vm.insertManyCoins("(Q F)"));
 	}
+	
+	@Test 
+	public void whenValidCoinsInsertedInsertManyCoinsReturnsTrue(){
+		assertEquals(true, vm.insertManyCoins("(Q N D P)"));
+	}
 }

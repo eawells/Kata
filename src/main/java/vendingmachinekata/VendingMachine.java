@@ -68,8 +68,9 @@ public class VendingMachine {
 
 	public boolean insertManyCoins(String coins) {
 		boolean allCoinsInserted = true;
-		for(int i = 1; i <coins.length()-1;i++){
-			if(!insertCoin(coins.charAt(i))){
+		String onlyCoins = coins.replaceAll("\\s","");
+		for(int i = 1; i <onlyCoins.length()-1;i++){
+			if(!insertCoin(onlyCoins.charAt(i))){
 				allCoinsInserted = false;
 			}
 		}
