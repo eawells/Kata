@@ -68,4 +68,9 @@ public class TestsForMain {
 	public void whenFormattedCorrectlyInvalidFormatIsFalse(){
 		assertEquals(false,vm.invalidFormat("(A1)"));
 	}
+	
+	@Test
+	public void whenThereAreCharsOutsideParenthesisInvaildFormatIsTrue(){
+		assertEquals(true,vm.invalidFormat("(A1)A"));
+	}
 }
