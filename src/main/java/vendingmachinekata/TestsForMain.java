@@ -83,4 +83,9 @@ public class TestsForMain {
 	public void whenInvalidCoinInsertedInsertCoinIsFalse(){
 		assertEquals(false,vm.insertCoin('C'));
 	}
+	
+	@Test
+	public void whenValidCoinInsertedInsertCoinIsTrue(){
+		assertEquals(true,vm.insertCoin('P'));
+	}
 }

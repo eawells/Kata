@@ -39,6 +39,7 @@ public class VendingMachine {
 		for(Coin coin: Coin.values()){
 			if(coinChar == coin.toString().charAt(0)){
 				controller.insertCoin(coin);
+				return true;
 			}
 		}
 		return false;
