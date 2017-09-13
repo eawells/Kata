@@ -66,10 +66,14 @@ public class VendingMachine {
 		return "Invaid key format. Please try again.";
 	}
 
-	public void insertManyCoins(String coins) {
+	public boolean insertManyCoins(String coins) {
+		boolean allCoinsInserted = true;
 		for(int i = 1; i <coins.length()-1;i++){
-			insertCoin(coins.charAt(i));
+			if(!insertCoin(coins.charAt(i))){
+				allCoinsInserted = false;
+			}
 		}
+		return allCoinsInserted;
 	}
 	
 }

@@ -94,4 +94,9 @@ public class TestsForMain {
 		vm.insertManyCoins("(Q D N P)");
 		assertEquals("40", vm.controller.getDisplay());
 	}
+	
+	@Test
+	public void whenOneCoinIsInvalidInsertManyCoinsReturnsFalse(){
+		assertEquals(false, vm.insertManyCoins("(Q F)"));
+	}
 }
