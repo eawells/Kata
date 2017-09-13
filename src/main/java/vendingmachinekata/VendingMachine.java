@@ -50,5 +50,9 @@ public class VendingMachine {
 			}
 		}
 	}
+
+	public boolean invalidFormat(String input) {
+		return true;
+	}
 	
 }

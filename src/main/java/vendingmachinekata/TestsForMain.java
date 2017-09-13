@@ -54,8 +54,13 @@ public class TestsForMain {
 	}
 	
 	@Test
-	public void whenAProductIsPurchasedThePriceIsDisplayed(){
+	public void whenAProductIsSelectedWithoutMoneyThePriceIsDisplayed(){
 		vm.selectProduct("A1");
 		assertEquals("PRICE: 100", vm.controller.getDisplay());
+	}
+	
+	@Test
+	public void whenNoParenthesisAreUsedForSelectionOrInsertionOptionsInvaildFormatIsTrue(){
+		assertEquals(true,vm.invalidFormat("A1"));
 	}
 }
