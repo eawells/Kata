@@ -39,8 +39,10 @@ public class Controller {
 		return isReturned;
 	}
 	
-	public String dispenseCoinstoCoinReturn(){
-		return "Coins dispensed to coin return: " + moneyHandler.dispenseCoinstoCoinReturn();
+	public int[] dispenseCoinsToCoinReturn(){
+		int[] coinsInCoinReturn = moneyHandler.dispenseCoinstoCoinReturn();
+		display.updateDisplay(moneyHandler.getMoneyAvailable(), moneyHandler.changeCanBeMade());
+		return coinsInCoinReturn;
 	}
 	
 
