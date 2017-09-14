@@ -119,4 +119,9 @@ public class TestsForMain {
 	public void whenDisplayInvaidProductMethodCalledItDisplaysInvaidProductError(){
 		assertEquals("Invaid product code. Please try again.", vm.displayInvalidProductError());
 	}
+	
+	@Test
+	public void whenDisplayInvalidKeyIsCalledItDisplaysInvalidKeyError(){
+		assertEquals("Invaid key. Please try again.", vm.displayInvalidKey());
+	}
 }

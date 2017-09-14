@@ -86,5 +86,9 @@ public class VendingMachine {
 	public String displayInvalidProductError() {
 		return "Invaid product code. Please try again.";
 	}
+
+	public String displayInvalidKey() {
+		return "Invaid key. Please try again.";
+	}
 	
 }
