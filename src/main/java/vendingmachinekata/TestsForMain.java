@@ -142,4 +142,9 @@ public class TestsForMain {
 		vm.insertManyCoins("(Q Q Q Q)");
 		assertEquals("COLA dispensed.", vm.selectProduct("(A1)"));
 	}
+	
+	@Test
+	public void whenExtraSpacesAreUsedToSelectProductItIsStillSelected(){
+		assertEquals("Item not dispensed.",vm.selectProduct("(A 2)"));
+	}
 }

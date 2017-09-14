@@ -90,7 +90,7 @@ public class VendingMachine {
 	}
 
 	public String selectProduct(String code) {
-		String codeOnly = code.substring(1, code.length()-1);
+		String codeOnly = code.substring(1, code.length()-1).replaceAll("\\s","");
 		for(Product product: Product.values()){
 			if(codeOnly.equals(product.code())){
 				if(!controller.selectItem(product)){
