@@ -106,6 +106,9 @@ public class VendingMachine {
 		if(coinsDispensed[3] >0){
 			coins.append(coinsDispensed[3]+" penny/pennies ");
 		}
+		if(coins.length()==0){
+			return "0 coins dispensed.";
+		}
 		coins.append("dispensed.");
 		return coins.toString();
 	}

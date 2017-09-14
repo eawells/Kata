@@ -131,4 +131,9 @@ public class TestsForMain {
 		vm.selectProduct("A2");
 		assertEquals("1 quarter(s) 1 dime(s) 1 nickel(s) 1 penny/pennies dispensed.",vm.dispenseCoins());
 	}
+	
+	@Test 
+	public void whenNoCoinsAreDispensedDispenseCoinsSaysZero(){
+		assertEquals("0 coins dispensed.",vm.dispenseCoins());
+	}
 }
