@@ -124,4 +124,11 @@ public class TestsForMain {
 	public void whenDisplayInvalidKeyIsCalledItDisplaysInvalidKeyError(){
 		assertEquals("Invaid key. Please try again.", vm.displayInvalidKey());
 	}
+	
+	@Test
+	public void whenCoinsAreDispensedTheAmountAndTypeOfCoinsAreDisplayed(){
+		vm.insertManyCoins("(Q Q Q N D P)");
+		vm.selectProduct("A2");
+		assertEquals("1 quarter(s) 1 dime(s) 1 nickel(s) 1 penny/pennies dispensed.",vm.dispenseCoins());
+	}
 }

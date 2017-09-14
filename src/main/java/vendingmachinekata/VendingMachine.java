@@ -90,5 +90,24 @@ public class VendingMachine {
 	public String displayInvalidKey() {
 		return "Invaid key. Please try again.";
 	}
+
+	public String dispenseCoins() {
+		int[] coinsDispensed = controller.dispenseCoinsToCoinReturnQuartersDimesNickelsPennies();
+		StringBuilder coins = new StringBuilder();
+		if(coinsDispensed[0] >0){
+			coins.append(coinsDispensed[0]+" quarter(s) ");
+		}
+		if(coinsDispensed[1] >0){
+			coins.append(coinsDispensed[1]+" dime(s) ");
+		}
+		if(coinsDispensed[2] >0){
+			coins.append(coinsDispensed[2]+" nickel(s) ");
+		}
+		if(coinsDispensed[3] >0){
+			coins.append(coinsDispensed[3]+" penny/pennies ");
+		}
+		coins.append("dispensed.");
+		return coins.toString();
+	}
 	
 }

@@ -39,7 +39,7 @@ public class Controller {
 		return isReturned;
 	}
 	
-	public int[] dispenseCoinsToCoinReturn(){
+	public int[] dispenseCoinsToCoinReturnQuartersDimesNickelsPennies(){
 		int[] coinsInCoinReturn = moneyHandler.dispenseCoinstoCoinReturn();
 		display.updateDisplay(moneyHandler.getMoneyAvailable(), moneyHandler.changeCanBeMade());
 		return coinsInCoinReturn;
