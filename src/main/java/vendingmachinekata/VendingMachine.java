@@ -45,15 +45,17 @@ public class VendingMachine {
 		return false;
 	}
 
-	public boolean selectProduct(String code) {
+	public String selectProduct(String code) {
 		String codeOnly = code.substring(1, code.length()-1);
 		for(Product product: Product.values()){
 			if(codeOnly.equals(product.code())){
-				controller.selectItem(product);
-				return true;
+				if(!controller.selectItem(product)){
+					return "Item not dispensed.";
+				}
+				return product.toString() + " dispensed.";
 			}
 		}
-		return false;
+		return this.displayInvalidProductError();
 	}
 
 	public boolean invalidFormat(String input) {

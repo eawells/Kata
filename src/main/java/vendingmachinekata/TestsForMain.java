@@ -111,8 +111,8 @@ public class TestsForMain {
 	}
 	
 	@Test
-	public void whenInvalidProductIsSelectedSelectProductIsFalse(){
-		assertEquals(false,vm.selectProduct("(D2)"));
+	public void whenProductIsSelectedWithoutMoneyItIsNotDispensed(){
+		assertEquals("Item not dispensed.",vm.selectProduct("(A2)"));
 	}
 	
 	@Test
@@ -135,5 +135,11 @@ public class TestsForMain {
 	@Test 
 	public void whenNoCoinsAreDispensedDispenseCoinsSaysZero(){
 		assertEquals("0 coins dispensed.",vm.dispenseCoins());
+	}
+	
+	@Test
+	public void whenAProductIsPurchasedItIsDispensed(){
+		vm.insertManyCoins("(Q Q Q Q)");
+		assertEquals("COLA dispensed.", vm.selectProduct("(A1)"));
 	}
 }
