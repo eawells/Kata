@@ -15,7 +15,7 @@ public class VendingMachine {
 	}
 	
 	public static void main(String[] args) {
-		
+
 	}
 
 	String displayOptions() {
@@ -46,8 +46,9 @@ public class VendingMachine {
 	}
 
 	public boolean selectProduct(String code) {
+		String codeOnly = code.substring(1, code.length()-1);
 		for(Product product: Product.values()){
-			if(code.equals(product.code())){
+			if(codeOnly.equals(product.code())){
 				controller.selectItem(product);
 				return true;
 			}

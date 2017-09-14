@@ -55,7 +55,7 @@ public class TestsForMain {
 	
 	@Test
 	public void whenAProductIsSelectedWithoutMoneyThePriceIsDisplayed(){
-		vm.selectProduct("A1");
+		vm.selectProduct("(A1)");
 		assertEquals("PRICE: 100", vm.controller.getDisplay());
 	}
 	
@@ -112,7 +112,7 @@ public class TestsForMain {
 	
 	@Test
 	public void whenInvalidProductIsSelectedSelectProductIsFalse(){
-		assertEquals(false,vm.selectProduct("D2"));
+		assertEquals(false,vm.selectProduct("(D2)"));
 	}
 	
 	@Test
@@ -128,7 +128,7 @@ public class TestsForMain {
 	@Test
 	public void whenCoinsAreDispensedTheAmountAndTypeOfCoinsAreDisplayed(){
 		vm.insertManyCoins("(Q Q Q N D P)");
-		vm.selectProduct("A2");
+		vm.selectProduct("(A2)");
 		assertEquals("1 quarter(s) 1 dime(s) 1 nickel(s) 1 penny/pennies dispensed.",vm.dispenseCoins());
 	}
 	
