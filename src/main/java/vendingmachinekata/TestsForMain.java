@@ -104,4 +104,9 @@ public class TestsForMain {
 	public void whenValidCoinsInsertedInsertManyCoinsReturnsTrue(){
 		assertEquals(true, vm.insertManyCoins("(Q N D P)"));
 	}
+	
+	@Test
+	public void whenDisplayInvaidCoinMethodCalledItDisplaysInvaidCoinError(){
+		assertEquals("Invaid coins not entered.", vm.displayInvalidCoinError());
+	}
 }

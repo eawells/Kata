@@ -76,5 +76,9 @@ public class VendingMachine {
 		}
 		return allCoinsInserted;
 	}
+
+	public String displayInvalidCoinError() {
+		return "Invaid coins not entered.";
+	}
 	
 }
