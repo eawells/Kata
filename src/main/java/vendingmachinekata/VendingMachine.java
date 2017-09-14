@@ -82,5 +82,9 @@ public class VendingMachine {
 	public String displayInvalidCoinError() {
 		return "Invaid coins not entered.";
 	}
+
+	public String displayInvalidProductError() {
+		return "Invaid product code. Please try again.";
+	}
 	
 }

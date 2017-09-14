@@ -114,4 +114,9 @@ public class TestsForMain {
 	public void whenInvalidProductIsSelectedSelectProductIsFalse(){
 		assertEquals(false,vm.selectProduct("D2"));
 	}
+	
+	@Test
+	public void whenDisplayInvaidProductMethodCalledItDisplaysInvaidProductError(){
+		assertEquals("Invaid product code. Please try again.", vm.displayInvalidProductError());
+	}
 }
