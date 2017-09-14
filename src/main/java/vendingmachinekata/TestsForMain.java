@@ -109,4 +109,9 @@ public class TestsForMain {
 	public void whenDisplayInvaidCoinMethodCalledItDisplaysInvaidCoinError(){
 		assertEquals("Invaid coins not entered.", vm.displayInvalidCoinError());
 	}
+	
+	@Test
+	public void whenInvalidProductIsSelectedSelectProductIsFalse(){
+		assertEquals(false,vm.selectProduct("D2"));
+	}
 }

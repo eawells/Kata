@@ -45,12 +45,14 @@ public class VendingMachine {
 		return false;
 	}
 
-	public void selectProduct(String code) {
+	public boolean selectProduct(String code) {
 		for(Product product: Product.values()){
 			if(code.equals(product.code())){
 				controller.selectItem(product);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	public boolean invalidFormat(String input) {
