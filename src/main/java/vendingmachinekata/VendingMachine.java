@@ -15,7 +15,51 @@ public class VendingMachine {
 	}
 	
 	public static void main(String[] args) {
-
+		VendingMachine vendingMachine = new VendingMachine();
+		System.out.println("VENDING MACHINE\n\nDISPLAY: " +vendingMachine.controller.getDisplay());
+		System.out.println(vendingMachine.displayOptions()+"\n");
+		Scanner userInput = new Scanner(System.in);	
+		String buttonPressed;
+		while(true){
+			buttonPressed = userInput.nextLine().toUpperCase().trim();
+			if(buttonPressed.equals(VendingMachineLiterals.EXIT)){
+				return;
+			}
+			else if(buttonPressed.isEmpty()){
+				System.out.println(vendingMachine.displayInvalidKey());
+			}
+			else if(buttonPressed.charAt(0)==VendingMachineLiterals.INSERT_COIN){
+				if(!vendingMachine.invalidFormat(buttonPressed.substring(1))){
+					if(!vendingMachine.insertManyCoins(buttonPressed.substring(1))){
+						System.out.println(vendingMachine.displayInvalidCoinError());
+					}
+					System.out.println(vendingMachine.dispenseCoins());
+				}
+				else{
+					System.out.println(vendingMachine.displayInvalidFormat());
+				}
+			}
+			else if(buttonPressed.equals(VendingMachineLiterals.RETURN_COINS)){
+				vendingMachine.controller.returnCoins();
+				System.out.println(vendingMachine.dispenseCoins());
+			}
+			else if(buttonPressed.charAt(0)==VendingMachineLiterals.PURCHASE){
+				if(!vendingMachine.invalidFormat(buttonPressed.substring(1))){
+					System.out.println(vendingMachine.selectProduct(buttonPressed.substring(1)));
+					System.out.println(vendingMachine.dispenseCoins());
+				}
+				else{
+					System.out.println(vendingMachine.displayInvalidFormat());
+				}
+			}
+			else if(buttonPressed.equals(VendingMachineLiterals.HELP)){
+				System.out.println(vendingMachine.displayOptions());
+			}
+			else if(!buttonPressed.equals(VendingMachineLiterals.DISPLAY_REFRESH)){
+				System.out.println(vendingMachine.displayInvalidKey());
+			}
+			System.out.println("\nPress " + VendingMachineLiterals.HELP + " for help.\nDISPLAY: " + vendingMachine.controller.getDisplay()+ "\n");
+		}
 	}
 
 	String displayOptions() {
